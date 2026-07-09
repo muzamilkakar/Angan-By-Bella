@@ -1,0 +1,46 @@
+# Use DecapBridge PKCE auth (required)
+backend:
+  name: git-gateway
+  repo: muzamilkakar/Angan-By-Bella
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/cd107f00-c03e-4585-b2c0-3eb70b1a1a0c/pkce
+  auth_token_endpoint: /sites/cd107f00-c03e-4585-b2c0-3eb70b1a1a0c/token
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "dresses"
+    label: "Dresses"
+    files:
+      - file: "public/content/dresses.json"
+        label: "All Dresses"
+        name: "dresses"
+        fields:
+          - label: "Dresses"
+            name: "dresses"
+            widget: "list"
+            summary: '{{fields.name}} — PKR {{fields.price}}'
+            fields:
+              - {label: "Dress Name", name: "name", widget: "string"}
+              - {label: "Price (PKR)", name: "price", widget: "number", value_type: "int"}
+              - {label: "Category", name: "category", widget: "select", options: ["Embroidered", "Printed", "Solids", "Silk", "Formals", "Kurtis", "Bottoms", "Other"]}
+              - {label: "Season", name: "season", widget: "select", options: ["Winter", "Summer", "All Season"], default: "All Season"}
+              - {label: "Main Image", name: "mainImage", widget: "image"}
+              - label: "Gallery Images"
+                name: "galleryImages"
+                widget: "list"
+                required: false
+                field: {label: "Image", name: "image", widget: "image"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Detail Highlights"
+                name: "highlights"
+                widget: "list"
+                required: false
+                max: 4
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+              - {label: "Show on Homepage (Featured)", name: "featured", widget: "boolean", default: false}
