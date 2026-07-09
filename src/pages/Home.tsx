@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { useDresses } from '../hooks/useDresses'
+import { getDressSlug } from '../utils'
+import DressCard from '../components/DressCard'
 
 const categories = [
   { name: 'Embroidered', slug: 'embroidered' },
@@ -16,6 +19,11 @@ const seasons = [
 ]
 
 export default function Home() {
+  const { dresses, loading } = useDresses()
+
+  const featured = dresses.filter(d => d.featured)
+  const display = featured.length > 0 ? featured : dresses.slice(0, 3)
+
   return (
     <>
       <section className="hero">
@@ -57,9 +65,21 @@ export default function Home() {
 
       <section className="section">
         <h2 className="section-title">Featured Dresses</h2>
-        <div className="featured-placeholder">
-          <p className="placeholder-text">Featured dresses will appear here.</p>
-        </div>
+        {loading ? (
+          <div className="featured-placeholder">
+            <p className="placeholder-text">Loading featured dresses...</p>
+          </div>
+        ) : display.length > 0 ? (
+          <div className="dress-grid">
+            {display.map((dress, i) => (
+              <DressCard key={getDressSlug(dress, i)} dress={dress} index={i} />
+            ))}
+          </div>
+        ) : (
+          <div className="featured-placeholder">
+            <p className="placeholder-text">Featured dresses will appear here.</p>
+          </div>
+        )}
       </section>
 
       <section className="instagram-cta section">

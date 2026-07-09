@@ -1,0 +1,42 @@
+{
+  "dresses": [
+    {
+      "name": "Sample Dress One",
+      "price": 6500,
+      "category": "Embroidered",
+      "season": "Winter",
+      "mainImage": "/images/placeholders/sample-1.svg",
+      "galleryImages": ["/images/placeholders/sample-1b.svg"],
+      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "highlights": [
+        {"label": "Embroidered Neckline", "image": "/images/placeholders/detail-1.svg"},
+        {"label": "Embroidered Hem", "image": "/images/placeholders/detail-2.svg"}
+      ],
+      "featured": true
+    },
+    {
+      "name": "Sample Dress Two",
+      "price": 4500,
+      "category": "Printed",
+      "season": "Summer",
+      "mainImage": "/images/placeholders/sample-2.svg",
+      "galleryImages": ["/images/placeholders/sample-2b.svg"],
+      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "highlights": [
+        {"label": "Printed Detail", "image": "/images/placeholders/detail-3.svg"}
+      ],
+      "featured": true
+    },
+    {
+      "name": "Sample Dress Three",
+      "price": 8500,
+      "category": "Silk",
+      "season": "All Season",
+      "mainImage": "/images/placeholders/sample-3.svg",
+      "galleryImages": [],
+      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "highlights": [],
+      "featured": false
+    }
+  ]
+}
