@@ -1,3 +1,5 @@
+import InstagramCTA from '../components/InstagramCTA'
+
 export default function About() {
   return (
     <section className="section about-page">
@@ -15,6 +17,9 @@ export default function About() {
       <p className="about-story">
         Visit us on Instagram to see our latest arrivals and behind-the-scenes stories.
       </p>
+      <div className="about-cta">
+        <InstagramCTA />
+      </div>
     </section>
   )
 }

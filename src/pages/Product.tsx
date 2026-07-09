@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { getDressSlug, formatPrice } from '../utils'
+import InstagramCTA from '../components/InstagramCTA'
 
 export default function ProductPage() {
   const [searchParams] = useSearchParams()
@@ -82,7 +83,7 @@ export default function ProductPage() {
             </div>
           )}
 
-          <a href="#" className="cta-button instagram-ask-btn">Ask About This Dress on Instagram</a>
+          <InstagramCTA label="Ask About This Dress on Instagram" />
         </div>
       </div>
     </section>

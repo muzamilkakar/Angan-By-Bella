@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
+import InstagramCTA from '../components/InstagramCTA'
 
 const categories = [
   { name: 'Embroidered', slug: 'embroidered' },
@@ -85,7 +86,7 @@ export default function Home() {
       <section className="instagram-cta section">
         <div className="cta-content">
           <h2>Have a question about any dress?</h2>
-          <a href="#" className="cta-button">Ask us on Instagram</a>
+          <InstagramCTA label="Ask us on Instagram" />
         </div>
       </section>
     </>
