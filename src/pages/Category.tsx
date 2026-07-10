@@ -78,9 +78,10 @@ export default function CategoryPage() {
 
       {!loading && !error && filtered.length > 0 && (
         <div className="dress-grid">
-          {filtered.map((dress, i) => (
-            <DressCard key={getDressSlug(dress, i)} dress={dress} index={i} />
-          ))}
+          {filtered.map((dress) => {
+            const fullIndex = dresses.indexOf(dress)
+            return <DressCard key={getDressSlug(dress, fullIndex)} dress={dress} index={fullIndex} />
+          })}
         </div>
       )}
     </section>

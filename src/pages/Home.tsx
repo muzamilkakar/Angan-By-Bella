@@ -72,9 +72,10 @@ export default function Home() {
           </div>
         ) : display.length > 0 ? (
           <div className="dress-grid">
-            {display.map((dress, i) => (
-              <DressCard key={getDressSlug(dress, i)} dress={dress} index={i} />
-            ))}
+            {display.map((dress) => {
+              const fullIndex = dresses.indexOf(dress)
+              return <DressCard key={getDressSlug(dress, fullIndex)} dress={dress} index={fullIndex} />
+            })}
           </div>
         ) : (
           <div className="featured-placeholder">
