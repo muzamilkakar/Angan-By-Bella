@@ -30,7 +30,6 @@ export default function Header() {
   return (
     <>
       <header className="site-header">
-        <div className="header-glass" />
         <div className="header-inner">
           <button
             className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
@@ -43,7 +42,11 @@ export default function Header() {
             <span />
           </button>
 
-          <div className="header-left">
+          <Link to="/" className="logo-link">
+            <Logo className="header-logo" />
+          </Link>
+
+          <nav className="desktop-nav">
             <Link
               to="/"
               className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
@@ -51,36 +54,27 @@ export default function Header() {
               Home
             </Link>
             <Link
-              to="/about"
-              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-            >
-              About
-            </Link>
-          </div>
-
-          <div className="header-center">
-            <Link to="/" className="logo-link">
-              <Logo className="header-logo" />
-            </Link>
-          </div>
-
-          <div className="header-right">
-            <Link
               to="/category"
               className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
             >
               Category
             </Link>
+            <Link
+              to="/about"
+              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+            >
+              About
+            </Link>
             <a
               href={instagramCTAUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-icon-link glass-icon"
+              className="nav-icon-link"
               aria-label="Visit us on Instagram"
             >
-              <InstagramIcon size={20} />
+              <InstagramIcon size={18} />
             </a>
-          </div>
+          </nav>
         </div>
 
         <div className="header-jali-strip" aria-hidden="true">
@@ -90,8 +84,8 @@ export default function Header() {
 
       <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
         <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link>
         <Link to="/category" className="nav-link" onClick={() => setMenuOpen(false)}>Category</Link>
+        <Link to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link>
         <a
           href={instagramCTAUrl()}
           target="_blank"
@@ -100,7 +94,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <InstagramIcon size={20} />
-          <span className="mobile-nav-icon-label">Instagram</span>
+          <span style={{ marginLeft: 8 }}>Instagram</span>
         </a>
       </div>
     </>
