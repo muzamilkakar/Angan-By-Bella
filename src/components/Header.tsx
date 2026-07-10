@@ -49,7 +49,7 @@ export default function Header() {
           <div className="header-center">
             <Link to="/">
               <img
-                src="/images/logo.png"
+                src="/images/logo.svg"
                 alt="Angan by Bella"
                 className="header-logo"
               />
