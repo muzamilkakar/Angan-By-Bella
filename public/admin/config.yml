@@ -39,6 +39,7 @@ collections:
           - label: "Dresses"
             name: "dresses"
             widget: "list"
+            collapsed: true
             summary: '{{fields.name}} — PKR {{fields.price}}'
             fields:
               - {label: "Dress Name", name: "name", widget: "string"}
