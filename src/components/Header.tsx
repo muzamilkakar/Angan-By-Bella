@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { instagramCTAUrl } from '../config'
 import JaliPattern from './JaliPattern'
+import Logo from './Logo'
 
 function InstagramIcon({ size = 18 }: { size?: number }) {
   return (
@@ -29,6 +30,7 @@ export default function Header() {
   return (
     <>
       <header className="site-header">
+        <div className="header-glass" />
         <div className="header-inner">
           <button
             className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
@@ -42,31 +44,41 @@ export default function Header() {
           </button>
 
           <div className="header-left">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About</Link>
+            <Link
+              to="/"
+              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+            >
+              About
+            </Link>
           </div>
 
           <div className="header-center">
-            <Link to="/">
-              <img
-                src="/images/logo.svg"
-                alt="Angan by Bella"
-                className="header-logo"
-              />
+            <Link to="/" className="logo-link">
+              <Logo className="header-logo" />
             </Link>
-            <span className="header-subtext">By Bella</span>
           </div>
 
           <div className="header-right">
-            <Link to="/category" className="nav-link">Category</Link>
+            <Link
+              to="/category"
+              className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
+            >
+              Category
+            </Link>
             <a
               href={instagramCTAUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-icon-link"
+              className="nav-icon-link glass-icon"
               aria-label="Visit us on Instagram"
             >
-              <InstagramIcon size={18} />
+              <InstagramIcon size={20} />
             </a>
           </div>
         </div>
@@ -88,7 +100,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <InstagramIcon size={20} />
-          <span style={{ marginLeft: 8 }}>Instagram</span>
+          <span className="mobile-nav-icon-label">Instagram</span>
         </a>
       </div>
     </>
