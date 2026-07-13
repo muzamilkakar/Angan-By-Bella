@@ -6,26 +6,24 @@ import InstagramCTA from '../components/InstagramCTA'
 
 function CornerTL() {
   return (
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
-      <line x1="0" y1="80" x2="0" y2="0" stroke="currentColor" strokeWidth="1.2" />
-      <line x1="0" y1="0" x2="80" y2="0" stroke="currentColor" strokeWidth="1.2" />
-      <polygon points="28,28 36,20 44,28 36,36" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.6" />
-      <polygon points="20,28 28,20 36,28 28,36" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
-      <polygon points="28,20 36,12 44,20 36,28" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
-      <circle cx="36" cy="28" r="1.5" fill="currentColor" opacity="0.2" />
+    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+      <line x1="0" y1="72" x2="0" y2="0" stroke="currentColor" strokeWidth="1" />
+      <line x1="0" y1="0" x2="72" y2="0" stroke="currentColor" strokeWidth="1" />
+      <polygon points="28,28 36,20 44,28 36,36" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
+      <polygon points="20,28 28,20 36,28 28,36" stroke="currentColor" strokeWidth="0.25" fill="none" opacity="0.35" />
+      <circle cx="36" cy="28" r="1.5" fill="currentColor" opacity="0.15" />
     </svg>
   )
 }
 
 function CornerBR() {
   return (
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
-      <line x1="80" y1="0" x2="80" y2="80" stroke="currentColor" strokeWidth="1.2" />
-      <line x1="80" y1="80" x2="0" y2="80" stroke="currentColor" strokeWidth="1.2" />
-      <polygon points="52,52 44,60 36,52 44,44" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.6" />
-      <polygon points="60,52 52,60 44,52 52,44" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
-      <polygon points="52,60 44,68 36,60 44,52" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
-      <circle cx="44" cy="52" r="1.5" fill="currentColor" opacity="0.2" />
+    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
+      <line x1="72" y1="0" x2="72" y2="72" stroke="currentColor" strokeWidth="1" />
+      <line x1="72" y1="72" x2="0" y2="72" stroke="currentColor" strokeWidth="1" />
+      <polygon points="44,44 36,52 28,44 36,36" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
+      <polygon points="52,44 44,52 36,44 44,36" stroke="currentColor" strokeWidth="0.25" fill="none" opacity="0.35" />
+      <circle cx="36" cy="44" r="1.5" fill="currentColor" opacity="0.15" />
     </svg>
   )
 }
@@ -75,7 +73,7 @@ export default function ProductPage() {
     <section className="product-page">
       <div className="product-layout">
         <div className="product-images">
-          <div className="product-frame">
+          <div style={{ position: 'relative' }}>
             <div className="jali-corner jali-corner-tl" aria-hidden="true">
               <CornerTL />
             </div>

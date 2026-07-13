@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { getDressSlug } from '../utils'
-import JaliPattern from '../components/JaliPattern'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
 
@@ -29,20 +28,15 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-jali-overlay" aria-hidden="true">
-          <JaliPattern />
-        </div>
-        <div className="hero-content">
-          <h1>Timeless Elegance</h1>
-          <p>
-            Handpicked women's clothing in Quetta — curated for the woman who
-            values grace, quality, and tradition.
-          </p>
-        </div>
+        <h1>Timeless Elegance</h1>
+        <p>
+          Handpicked women's clothing in Quetta — curated for the woman who
+          values grace, quality, and tradition.
+        </p>
         <div className="hero-ornament" aria-hidden="true" />
       </section>
 
-      <section className="section">
+      <section className="section" style={{ paddingTop: 0 }}>
         <h2 className="section-title">Categories</h2>
         <div className="category-grid">
           {categories.map((cat) => (
@@ -57,11 +51,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-wide">
-        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 24px' }}>
+      <section className="section-wide" style={{ background: 'var(--angan-sand)' }}>
+        <div style={{ maxWidth: 'var(--mw)', margin: '0 auto' }}>
           <h2 className="section-title">Shop the Season</h2>
-        </div>
-        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 24px' }}>
           <div className="season-grid">
             {seasons.map((s) => (
               <Link
@@ -69,7 +61,6 @@ export default function Home() {
                 to={`/category?season=${s.season}`}
                 className="season-card"
               >
-                <JaliPattern />
                 <span className="season-name">{s.name}</span>
               </Link>
             ))}
@@ -98,7 +89,6 @@ export default function Home() {
       </section>
 
       <section className="instagram-cta">
-        <JaliPattern />
         <div className="cta-content">
           <h2>Have a question about any dress?</h2>
           <InstagramCTA label="Ask us on Instagram" />

@@ -5,9 +5,9 @@ import { instagramCTAUrl } from '../config'
 function LogoMark() {
   return (
     <svg
-      width="160"
-      height="44"
-      viewBox="0 0 160 44"
+      width="168"
+      height="46"
+      viewBox="0 0 168 46"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Angan by Bella"
@@ -25,11 +25,11 @@ function LogoMark() {
       </text>
       <text
         x="0"
-        y="40"
+        y="41"
         fontFamily="'Karla', sans-serif"
         fontSize="8"
         fill="#7A6A57"
-        letterSpacing="4"
+        letterSpacing="4.5"
         fontWeight="400"
       >
         BY BELLA
@@ -50,7 +50,6 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -62,16 +61,9 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <>
-      <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
+      <header className="site-header">
         <div className="header-inner">
           <button
             className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
@@ -84,7 +76,7 @@ export default function Header() {
             <span />
           </button>
 
-          <nav className="desktop-nav-left">
+          <nav className="desktop-nav" style={{ justifyContent: 'flex-start' }}>
             <Link
               to="/"
               className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
@@ -99,11 +91,12 @@ export default function Header() {
             </Link>
           </nav>
 
-          <Link to="/" className="header-logo" aria-label="Home">
+          <Link to="/" className="header-center" aria-label="Home">
             <LogoMark />
+            <span className="header-label">By Bella</span>
           </Link>
 
-          <nav className="desktop-nav">
+          <nav className="desktop-nav" style={{ justifyContent: 'flex-end' }}>
             <Link
               to="/category"
               className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
@@ -121,7 +114,6 @@ export default function Header() {
             </a>
           </nav>
         </div>
-        <div className="header-scroll-indicator" aria-hidden="true" />
       </header>
 
       <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>

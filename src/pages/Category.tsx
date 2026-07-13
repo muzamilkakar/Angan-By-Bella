@@ -32,7 +32,7 @@ export default function CategoryPage() {
 
   return (
     <section className="section" style={{ paddingTop: 104 }}>
-      <h1 className="section-title">Our Collection</h1>
+      <h2 className="section-title">Our Collection</h2>
 
       <div className="filter-tabs">
         <div className="filter-group">
