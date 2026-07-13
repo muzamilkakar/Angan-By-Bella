@@ -145,8 +145,16 @@ h3 { font-size: 1.35rem; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--angan-sand);
+  background: rgba(251, 246, 236, 0.72);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
   border-bottom: 1px solid rgba(176, 141, 91, 0.06);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header {
+    background: rgba(251, 246, 236, 0.96);
+  }
 }
 
 .header-inner {
