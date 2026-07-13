@@ -30,7 +30,7 @@ body {
   font-family: 'Karla', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  background-color: var(--angan-cream);
+  background: linear-gradient(135deg, var(--angan-sand) 0%, var(--angan-cream) 50%, var(--angan-sand) 100%);
   color: var(--angan-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -127,8 +127,8 @@ h3 { font-size: 1.5rem; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--angan-sand);
-  border-bottom: 1px solid rgba(176, 141, 91, 0.12);
+  background: linear-gradient(180deg, var(--angan-sand) 0%, rgba(251, 246, 236, 0.98) 100%);
+  border-bottom: 1px solid rgba(176, 141, 91, 0.08);
 }
 
 .header-inner {
@@ -138,19 +138,13 @@ h3 { font-size: 1.5rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  min-height: 68px;
 }
 
 .header-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-center {
   display: flex;
   align-items: center;
 }
@@ -159,9 +153,12 @@ h3 { font-size: 1.5rem; }
   height: 46px;
   width: auto;
   display: block;
+  transition: all var(--transition-base);
 }
 
-
+.header-center svg:hover {
+  opacity: 0.8;
+}
 
 .desktop-nav {
   display: none;
@@ -183,12 +180,13 @@ h3 { font-size: 1.5rem; }
 
 .nav-link {
   font-family: 'Karla', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--angan-text);
-  letter-spacing: 0.04em;
+  color: var(--angan-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   transition: color var(--transition-base);
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 4px;
   position: relative;
 }
@@ -196,7 +194,7 @@ h3 { font-size: 1.5rem; }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 50%;
   width: 0;
   height: 1.5px;
@@ -208,11 +206,11 @@ h3 { font-size: 1.5rem; }
 
 .nav-link:hover {
   color: var(--angan-gold);
-  background: rgba(176, 141, 91, 0.05);
+  background: rgba(176, 141, 91, 0.04);
 }
 
 .nav-link:hover::after {
-  width: 50%;
+  width: 60%;
 }
 
 .nav-link.active {
@@ -221,7 +219,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .nav-link.active::after {
-  width: 50%;
+  width: 60%;
 }
 
 .nav-icon-link {
@@ -233,6 +231,7 @@ h3 { font-size: 1.5rem; }
   border-radius: 50%;
   color: var(--angan-text-muted);
   transition: all var(--transition-base);
+  margin-left: 8px;
 }
 
 .nav-icon-link:hover {
@@ -294,7 +293,7 @@ h3 { font-size: 1.5rem; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -306,9 +305,12 @@ h3 { font-size: 1.5rem; }
 }
 
 .mobile-nav .nav-link {
-  font-size: 20px;
+  font-size: 22px;
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--angan-brown);
 }
 
 .mobile-nav .nav-link::after {
@@ -318,14 +320,7 @@ h3 { font-size: 1.5rem; }
 /* ── Section ── */
 
 .section {
-  padding: 64px 24px;
-  max-width: var(--content-max);
-  margin: 0 auto;
-  width: 100%;
-}
-
-.section-sm {
-  padding: 48px 24px;
+  padding: 80px 24px;
   max-width: var(--content-max);
   margin: 0 auto;
   width: 100%;
@@ -338,15 +333,56 @@ h3 { font-size: 1.5rem; }
   color: var(--angan-brown);
   text-align: center;
   margin-bottom: 48px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1.5px;
+  background: var(--angan-gold);
+  margin: 16px auto 0;
+  opacity: 0.5;
+}
+
+/* ── Section Jali Divider ── */
+
+.section-divider {
+  height: 5px;
+  overflow: hidden;
+  opacity: 0.25;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ── Hero ── */
 
 .hero {
   text-align: center;
-  padding: 96px 24px 80px;
+  padding: 104px 24px 88px;
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(176, 141, 91, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-jali-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  color: var(--angan-gold);
 }
 
 .hero-content {
@@ -357,26 +393,27 @@ h3 { font-size: 1.5rem; }
 }
 
 .hero-content h1 {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 
 .hero-content p {
   font-size: 17px;
   color: var(--angan-text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 540px;
   margin: 0 auto;
+  font-family: 'Karla', sans-serif;
 }
 
-.hero-jali-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  color: var(--angan-gold);
-}
-
-.hero-jali-divider {
-  margin-top: 80px;
+.hero-divider {
+  margin-top: 88px;
+  height: 5px;
+  overflow: hidden;
+  opacity: 0.2;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Category Grid ── */
@@ -389,15 +426,30 @@ h3 { font-size: 1.5rem; }
 
 .category-card {
   background: var(--angan-sand);
-  border: 1px solid rgba(176, 141, 91, 0.1);
-  border-radius: 8px;
-  padding: 24px 16px;
+  border: 1px solid rgba(176, 141, 91, 0.08);
+  border-radius: 6px;
+  padding: 28px 16px 20px;
   text-align: center;
   transition: all var(--transition-base);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   position: relative;
+  box-shadow: 0 1px 4px var(--shadow-warm);
+}
+
+.category-card::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: 1px solid rgba(176, 141, 91, 0.15);
+  transform: rotate(45deg);
+  border-radius: 1px;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
 }
 
 .category-card::after {
@@ -414,9 +466,14 @@ h3 { font-size: 1.5rem; }
 }
 
 .category-card:hover {
-  border-color: rgba(176, 141, 91, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px var(--shadow-warm);
+  border-color: rgba(176, 141, 91, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow-warm);
+}
+
+.category-card:hover::before {
+  border-color: var(--angan-gold);
+  background: rgba(176, 141, 91, 0.06);
 }
 
 .category-card:hover::after {
@@ -425,7 +482,7 @@ h3 { font-size: 1.5rem; }
 
 .category-name {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
   font-weight: 500;
   color: var(--angan-brown);
@@ -436,40 +493,65 @@ h3 { font-size: 1.5rem; }
 .season-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 20px;
 }
 
 .season-card {
-  background: var(--angan-brown);
-  border-radius: 8px;
-  padding: 48px 24px;
+  background: linear-gradient(135deg, var(--angan-brown) 0%, #3D2413 100%);
+  border-radius: 6px;
+  padding: 56px 24px;
   text-align: center;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px var(--shadow-warm);
+  box-shadow: 0 4px 24px var(--shadow-warm);
+  border: 1px solid rgba(176, 141, 91, 0.06);
 }
 
 .season-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 40%, rgba(176, 141, 91, 0.1), transparent 65%);
+  background: radial-gradient(ellipse at 40% 50%, rgba(176, 141, 91, 0.08), transparent 60%);
   pointer-events: none;
 }
 
+.season-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--angan-gold), transparent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.season-card .jali-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+}
+
 .season-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px var(--shadow-warm-heavy);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow-warm-heavy);
+  border-color: rgba(176, 141, 91, 0.15);
+}
+
+.season-card:hover::after {
+  opacity: 0.5;
 }
 
 .season-name {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--angan-sand);
   position: relative;
   z-index: 1;
+  letter-spacing: 0.02em;
 }
 
 /* ── Dress Grid ── */
@@ -484,12 +566,12 @@ h3 { font-size: 1.5rem; }
 
 .dress-card {
   background: var(--angan-sand);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(176, 141, 91, 0.08);
+  border: 1px solid rgba(176, 141, 91, 0.06);
   box-shadow: 0 2px 8px var(--shadow-warm);
 }
 
@@ -509,7 +591,7 @@ h3 { font-size: 1.5rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.45s ease-out;
 }
 
 .dress-card:hover .dress-card-image img {
@@ -526,29 +608,29 @@ h3 { font-size: 1.5rem; }
 
 .dress-card-name {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--angan-brown);
 }
 
 .dress-card-price {
   font-family: 'Karla', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--angan-sand);
   background: var(--angan-clay);
   padding: 4px 10px;
-  border-radius: 3px;
+  border-radius: 2px;
   white-space: nowrap;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 /* ── Featured Placeholder ── */
 
 .featured-placeholder {
   background: var(--angan-sand);
-  border: 1px dashed rgba(176, 141, 91, 0.2);
-  border-radius: 8px;
+  border: 1px dashed rgba(176, 141, 91, 0.15);
+  border-radius: 6px;
   padding: 48px 24px;
   text-align: center;
 }
@@ -561,7 +643,7 @@ h3 { font-size: 1.5rem; }
 /* ── Instagram CTA Banner ── */
 
 .instagram-cta {
-  background: var(--angan-brown);
+  background: linear-gradient(135deg, var(--angan-brown) 0%, #3D2413 100%);
   text-align: center;
   max-width: none;
   padding: 80px 24px;
@@ -572,7 +654,19 @@ h3 { font-size: 1.5rem; }
 .instagram-cta .jali-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.06;
+  opacity: 0.05;
+}
+
+.instagram-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176, 141, 91, 0.06) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .cta-content {
@@ -594,24 +688,25 @@ h3 { font-size: 1.5rem; }
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: var(--angan-cream);
   color: var(--angan-brown);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   font-family: 'Karla', sans-serif;
   padding: 14px 32px;
   border-radius: 4px;
   transition: all var(--transition-base);
   border: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   box-shadow: 0 2px 12px var(--shadow-warm-heavy);
 }
 
 .cta-button:hover {
   background: var(--angan-sand);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(46, 26, 15, 0.25);
+  box-shadow: 0 6px 24px rgba(46, 26, 15, 0.25);
 }
 
 .cta-button:active {
@@ -639,10 +734,10 @@ h3 { font-size: 1.5rem; }
 
 .filter-label {
   font-family: 'Karla', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--angan-text-muted);
 }
 
@@ -656,13 +751,15 @@ h3 { font-size: 1.5rem; }
   background: none;
   border: none;
   border-radius: 0;
-  padding: 8px 16px;
-  font-size: 13px;
+  padding: 8px 18px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--angan-text-muted);
   transition: all var(--transition-base);
   font-family: 'Karla', sans-serif;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .filter-btn::after {
@@ -736,13 +833,27 @@ h3 { font-size: 1.5rem; }
   position: relative;
 }
 
+.product-main-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(ellipse, rgba(176, 141, 91, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .product-main-image {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 4px;
   background: var(--angan-cream);
-  border: 1px solid rgba(176, 141, 91, 0.08);
+  border: 1px solid rgba(176, 141, 91, 0.06);
   box-shadow: 0 8px 32px var(--shadow-warm);
+  position: relative;
+  z-index: 1;
 }
 
 .product-main-image img {
@@ -754,21 +865,22 @@ h3 { font-size: 1.5rem; }
 /* Jali corner ornaments framing the main image */
 .jali-corner {
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   color: var(--angan-gold);
   opacity: 0.15;
   pointer-events: none;
+  z-index: 2;
 }
 
 .jali-corner-tl {
-  top: -8px;
-  left: -8px;
+  top: -10px;
+  left: -10px;
 }
 
 .jali-corner-br {
-  bottom: -8px;
-  right: -8px;
+  bottom: -10px;
+  right: -10px;
 }
 
 .product-thumbnails {
@@ -778,8 +890,8 @@ h3 { font-size: 1.5rem; }
 }
 
 .thumb-btn {
-  width: 64px;
-  height: 80px;
+  width: 60px;
+  height: 76px;
   border-radius: 3px;
   overflow: hidden;
   border: none;
@@ -825,19 +937,20 @@ h3 { font-size: 1.5rem; }
   font-weight: 600;
   color: var(--angan-brown);
   line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .product-price-tag {
   display: inline-flex;
   align-items: center;
   font-family: 'Karla', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--angan-sand);
   background: var(--angan-clay);
   padding: 6px 14px;
-  border-radius: 3px;
-  letter-spacing: 0.02em;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
   align-self: flex-start;
 }
 
@@ -860,7 +973,7 @@ h3 { font-size: 1.5rem; }
 
 .highlight-card {
   position: relative;
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
   aspect-ratio: 1;
   background: var(--angan-cream);
@@ -880,15 +993,16 @@ h3 { font-size: 1.5rem; }
   left: 0;
   right: 0;
   padding: 12px;
-  background: rgba(46, 26, 15, 0.75);
+  background: rgba(46, 26, 15, 0.7);
   color: var(--angan-sand);
   font-family: 'Karla', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   text-align: center;
   transform: translateY(100%);
   transition: transform var(--transition-base);
   backdrop-filter: blur(4px);
+  letter-spacing: 0.03em;
 }
 
 .highlight-card:hover .highlight-label,
@@ -944,9 +1058,9 @@ h3 { font-size: 1.5rem; }
 /* ── Footer ── */
 
 footer {
-  background: var(--angan-espresso);
+  background: linear-gradient(135deg, var(--angan-espresso) 0%, #1F1108 100%);
   text-align: center;
-  padding: 24px;
+  padding: 32px 24px;
   position: relative;
   overflow: hidden;
 }
@@ -958,14 +1072,21 @@ footer::before {
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(176, 141, 91, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(176, 141, 91, 0.15), transparent);
+}
+
+footer .jali-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
 }
 
 footer p {
   font-size: 13px;
-  color: var(--angan-text-muted);
+  color: rgba(122, 106, 87, 0.7);
   font-family: 'Karla', sans-serif;
   position: relative;
+  z-index: 1;
 }
 
 /* ── Responsive ── */
@@ -993,15 +1114,28 @@ footer p {
 @media (min-width: 768px) {
   .header-inner {
     padding: 0 32px;
-    min-height: 72px;
+    min-height: 76px;
   }
 
   .header-center svg {
     height: 50px;
   }
 
+  .nav-link {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+
   .section {
-    padding: 80px 32px;
+    padding: 96px 32px;
+  }
+
+  .hero {
+    padding: 120px 32px 96px;
+  }
+
+  .hero-divider {
+    margin-top: 96px;
   }
 
   .product-layout {
@@ -1019,12 +1153,30 @@ footer p {
   }
 
   .jali-corner {
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 88px;
+  }
+
+  .jali-corner-tl {
+    top: -12px;
+    left: -12px;
+  }
+
+  .jali-corner-br {
+    bottom: -12px;
+    right: -12px;
   }
 
   .category-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .season-card {
+    padding: 72px 32px;
+  }
+
+  footer {
+    padding: 40px 32px;
   }
 }
 

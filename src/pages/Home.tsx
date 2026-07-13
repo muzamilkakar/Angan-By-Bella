@@ -39,10 +39,14 @@ export default function Home() {
             values grace, quality, and tradition.
           </p>
         </div>
-        <div className="hero-jali-divider" aria-hidden="true">
+        <div className="hero-divider" aria-hidden="true">
           <JaliPattern />
         </div>
       </section>
+
+      <div className="section-divider" aria-hidden="true">
+        <JaliPattern />
+      </div>
 
       <section className="section">
         <h2 className="section-title">Shop by Category</h2>
@@ -59,6 +63,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="section-divider" aria-hidden="true">
+        <JaliPattern />
+      </div>
+
       <section className="section">
         <h2 className="section-title">Shop the Season</h2>
         <div className="season-grid">
@@ -68,11 +76,16 @@ export default function Home() {
               to={`/category?season=${s.season}`}
               className="season-card"
             >
+              <JaliPattern />
               <span className="season-name">{s.name}</span>
             </Link>
           ))}
         </div>
       </section>
+
+      <div className="section-divider" aria-hidden="true">
+        <JaliPattern />
+      </div>
 
       <section className="section">
         <h2 className="section-title">Featured Dresses</h2>
