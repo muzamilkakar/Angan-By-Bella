@@ -1,24 +1,36 @@
+import JaliPattern from '../components/JaliPattern'
 import InstagramCTA from '../components/InstagramCTA'
 
 export default function About() {
   return (
     <section className="section about-page">
       <h1>About Angan by Bella</h1>
+
       <p className="about-story">
-        Angan by Bella is a Quetta-based women's clothing brand offering handpicked
-        embroidered, printed, solid, and formal wear. We believe in bringing you
-        elegance that tells a story — each piece curated with care.
+        <em>Angan</em> — the Urdu word for courtyard, that open,的中心 space where
+        a South Asian home breathes. It is where families gather, where stories are
+        told, and where everyday life meets quiet beauty. This is the feeling we
+        bring to every piece we curate.
       </p>
+
       <p className="about-story">
-        Our journey began with a love for timeless design and a commitment to quality.
-        From casual kurtis to sophisticated silks, every dress in our collection is
-        chosen to make you feel beautiful and confident.
+        Based in Quetta, Angan by Bella is a women's clothing brand built on a
+        love for timeless design and honest quality. Each dress is handpicked —
+        from embroidered kurtis to flowing silks — with an eye for what endures
+        beyond a season.
       </p>
+
       <p className="about-story">
-        Visit us on Instagram to see our latest arrivals and behind-the-scenes stories.
+        We believe elegance isn't about following trends. It's about finding
+        pieces that feel like they were always meant to be yours.
       </p>
+
       <div className="about-cta">
-        <InstagramCTA />
+        <InstagramCTA label="Follow us on Instagram" />
+      </div>
+
+      <div style={{ marginTop: 48, opacity: 0.08 }} aria-hidden="true">
+        <JaliPattern />
       </div>
     </section>
   )

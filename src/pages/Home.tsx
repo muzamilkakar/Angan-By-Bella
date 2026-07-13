@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { getDressSlug } from '../utils'
+import JaliPattern from '../components/JaliPattern'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
 
@@ -28,9 +29,18 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <div className="hero-jali-bg" aria-hidden="true">
+          <JaliPattern />
+        </div>
         <div className="hero-content">
-          <h1>Angan by Bella</h1>
-          <p>Handpicked women's clothing in Quetta — timeless elegance, curated for you.</p>
+          <h1>Timeless Elegance</h1>
+          <p>
+            Handpicked women's clothing in Quetta — curated for the woman who
+            values grace, quality, and tradition.
+          </p>
+        </div>
+        <div className="hero-jali-divider" aria-hidden="true">
+          <JaliPattern />
         </div>
       </section>
 
@@ -85,6 +95,7 @@ export default function Home() {
       </section>
 
       <section className="instagram-cta section">
+        <JaliPattern />
         <div className="cta-content">
           <h2>Have a question about any dress?</h2>
           <InstagramCTA label="Ask us on Instagram" />

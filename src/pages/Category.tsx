@@ -31,7 +31,7 @@ export default function CategoryPage() {
   }
 
   return (
-    <section className="section category-page">
+    <section className="section">
       <h1 className="section-title">Our Collection</h1>
 
       <div className="filter-tabs">
