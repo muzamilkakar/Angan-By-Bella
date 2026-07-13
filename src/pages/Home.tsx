@@ -33,7 +33,9 @@ export default function Home() {
           Handpicked women's clothing in Quetta — curated for the woman who
           values grace, quality, and tradition.
         </p>
-        <div className="hero-ornament" aria-hidden="true" />
+        <div className="hero-ornament" aria-hidden="true">
+          <div className="hero-ornament-diamond" />
+        </div>
       </section>
 
       <div className="shop-strip">
