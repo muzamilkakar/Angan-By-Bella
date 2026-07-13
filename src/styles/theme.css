@@ -150,27 +150,18 @@ h3 { font-size: 1.5rem; }
   align-items: center;
 }
 
-.logo-link {
+.header-center {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  line-height: 1;
-  gap: 2px;
 }
 
-.header-logo-img {
-  height: 48px;
+.header-center svg {
+  height: 46px;
   width: auto;
+  display: block;
 }
 
-.header-logo-label {
-  font-family: 'Karla', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--angan-text-muted);
-}
+
 
 .desktop-nav {
   display: none;
@@ -1005,8 +996,8 @@ footer p {
     min-height: 72px;
   }
 
-  .header-logo-img {
-    height: 52px;
+  .header-center svg {
+    height: 50px;
   }
 
   .section {
