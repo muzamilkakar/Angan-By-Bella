@@ -1,5 +1,6 @@
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
 import type { Category, Season } from '../types'
@@ -8,6 +9,7 @@ const ALL_CATEGORIES: Category[] = ["Embroidered", "Printed", "Solids", "Silk", 
 const ALL_SEASONS: Season[] = ["Winter", "Summer", "All Season"]
 
 export default function CategoryPage() {
+  useScrollReveal()
   const [searchParams, setSearchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
 
@@ -32,9 +34,9 @@ export default function CategoryPage() {
 
   return (
     <section className="section" style={{ paddingTop: 104 }}>
-      <h2 className="section-title">Our Collection</h2>
+      <h2 className="section-title reveal">Our Collection</h2>
 
-      <div className="filter-tabs">
+      <div className="filter-tabs reveal reveal-delay-1">
         <div className="filter-group">
           <span className="filter-label">Category</span>
           <div className="filter-buttons">

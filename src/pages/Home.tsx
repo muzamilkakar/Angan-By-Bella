@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
@@ -21,13 +22,14 @@ const seasons = [
 
 export default function Home() {
   const { dresses, loading } = useDresses()
+  useScrollReveal()
 
   const featured = dresses.filter(d => d.featured)
   const display = featured.length > 0 ? featured : dresses.slice(0, 3)
 
   return (
     <>
-      <section className="hero">
+      <section className="hero reveal">
         <h1>Timeless Elegance</h1>
         <p>
           Handpicked women's clothing in Quetta — curated for the woman who
@@ -38,7 +40,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="shop-strip">
+      <div className="shop-strip reveal reveal-delay-1">
         <div className="shop-strip-inner">
           <div className="category-strip">
             {categories.map((cat) => (
@@ -65,7 +67,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="section">
+      <section className="section reveal reveal-delay-2">
         <h2 className="section-title">Featured Dresses</h2>
         {loading ? (
           <div className="featured-placeholder">
@@ -85,7 +87,7 @@ export default function Home() {
         )}
       </section>
 
-      <section className="instagram-cta">
+      <section className="instagram-cta reveal reveal-delay-3">
         <div className="cta-content">
           <h2>Have a question about any dress?</h2>
           <InstagramCTA label="Ask us on Instagram" />

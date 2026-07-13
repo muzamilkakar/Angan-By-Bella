@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug, formatPrice } from '../utils'
 import InstagramCTA from '../components/InstagramCTA'
 
@@ -29,6 +30,7 @@ function CornerBR() {
 }
 
 export default function ProductPage() {
+  useScrollReveal()
   const [searchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
   const slug = searchParams.get('slug')
@@ -72,7 +74,7 @@ export default function ProductPage() {
   return (
     <section className="product-page">
       <div className="product-layout">
-        <div className="product-images">
+        <div className="product-images reveal">
           <div style={{ position: 'relative' }}>
             <div className="jali-corner jali-corner-tl" aria-hidden="true">
               <CornerTL />
@@ -101,10 +103,13 @@ export default function ProductPage() {
           )}
         </div>
 
-        <div className="product-info">
-          <h1 className="product-name">{dress.name}</h1>
+        <div className="product-info reveal">
+          <h1 className="product-name reveal reveal-delay-1">{dress.name}</h1>
 
-          <span className="product-price-tag">{formatPrice(dress.price)}</span>
+          <div className="product-price-row reveal reveal-delay-2">
+            <span className="product-price-ornament" aria-hidden="true" />
+            <span className="product-price-tag">{formatPrice(dress.price)}</span>
+          </div>
 
           <p className="product-description">{dress.description}</p>
 
