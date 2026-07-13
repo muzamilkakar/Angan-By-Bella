@@ -5,31 +5,45 @@ import { instagramCTAUrl } from '../config'
 function LogoMark() {
   return (
     <svg
-      width="168"
-      height="50"
-      viewBox="0 0 168 50"
+      width="200"
+      height="58"
+      viewBox="0 0 200 58"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Angan by Bella"
     >
+      <defs>
+        <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#B08D5B" stopOpacity="0" />
+          <stop offset="50%" stopColor="#B08D5B" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#B08D5B" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+
       <text
-        x="84"
+        x="100"
         y="26"
         textAnchor="middle"
         fontFamily="'Noto Nastaliq Urdu', serif"
-        fontSize="22"
+        fontSize="24"
         fill="#4A2C1A"
         fontWeight="600"
-        letterSpacing="1.2"
+        letterSpacing="1.5"
       >
         انگن
       </text>
+
+      {/* Decorative divider: gold line with diamond ends */}
+      <line x1="60" y1="38" x2="140" y2="38" stroke="url(#goldLine)" strokeWidth="0.5" />
+      <polygon points="60,35 63,38 60,41 57,38" fill="#B08D5B" opacity="0.3" />
+      <polygon points="140,35 143,38 140,41 137,38" fill="#B08D5B" opacity="0.3" />
+
       <text
-        x="84"
-        y="44"
+        x="100"
+        y="52"
         textAnchor="middle"
         fontFamily="'Karla', sans-serif"
-        fontSize="9"
+        fontSize="10"
         fill="#7A6A57"
         letterSpacing="5"
         fontWeight="400"

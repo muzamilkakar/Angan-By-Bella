@@ -116,7 +116,7 @@ h3 { font-size: 1.35rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+  min-height: 80px;
 }
 
 .header-center {
@@ -131,7 +131,7 @@ h3 { font-size: 1.35rem; }
 }
 
 .header-center svg {
-  height: 44px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -167,11 +167,11 @@ h3 { font-size: 1.35rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   color: var(--angan-text-muted);
   transition: color var(--t);
-  margin-left: 6px;
+  margin-left: 8px;
 }
 
 .nav-icon-link:hover {
@@ -811,16 +811,16 @@ footer p {
 @media (min-width: 768px) {
   .header-inner {
     padding: 0 40px;
-    min-height: 76px;
+    min-height: 88px;
   }
 
   .header-center svg {
-    height: 48px;
+    height: 56px;
   }
 
   .nav-link {
-    font-size: 12px;
-    padding: 8px 20px;
+    font-size: 13px;
+    padding: 10px 24px;
   }
 
   .section {
