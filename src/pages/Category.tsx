@@ -31,7 +31,7 @@ export default function CategoryPage() {
   }
 
   return (
-    <section className="section">
+    <section className="section" style={{ paddingTop: 104 }}>
       <h1 className="section-title">Our Collection</h1>
 
       <div className="filter-tabs">
@@ -67,7 +67,7 @@ export default function CategoryPage() {
       </div>
 
       {loading && <p className="placeholder-text">Loading dresses...</p>}
-      {error && <p className="placeholder-text">Could not load dresses. Please try again later.</p>}
+      {error && <p className="placeholder-text">Could not load dresses.</p>}
 
       {!loading && !error && filtered.length === 0 && (
         <div className="empty-state">

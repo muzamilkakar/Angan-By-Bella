@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-jali-bg" aria-hidden="true">
+        <div className="hero-jali-overlay" aria-hidden="true">
           <JaliPattern />
         </div>
         <div className="hero-content">
@@ -39,17 +39,11 @@ export default function Home() {
             values grace, quality, and tradition.
           </p>
         </div>
-        <div className="hero-divider" aria-hidden="true">
-          <JaliPattern />
-        </div>
+        <div className="hero-ornament" aria-hidden="true" />
       </section>
 
-      <div className="section-divider" aria-hidden="true">
-        <JaliPattern />
-      </div>
-
       <section className="section">
-        <h2 className="section-title">Shop by Category</h2>
+        <h2 className="section-title">Categories</h2>
         <div className="category-grid">
           {categories.map((cat) => (
             <Link
@@ -63,29 +57,25 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="section-divider" aria-hidden="true">
-        <JaliPattern />
-      </div>
-
-      <section className="section">
-        <h2 className="section-title">Shop the Season</h2>
-        <div className="season-grid">
-          {seasons.map((s) => (
-            <Link
-              key={s.season}
-              to={`/category?season=${s.season}`}
-              className="season-card"
-            >
-              <JaliPattern />
-              <span className="season-name">{s.name}</span>
-            </Link>
-          ))}
+      <section className="section-wide">
+        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 24px' }}>
+          <h2 className="section-title">Shop the Season</h2>
+        </div>
+        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 24px' }}>
+          <div className="season-grid">
+            {seasons.map((s) => (
+              <Link
+                key={s.season}
+                to={`/category?season=${s.season}`}
+                className="season-card"
+              >
+                <JaliPattern />
+                <span className="season-name">{s.name}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-
-      <div className="section-divider" aria-hidden="true">
-        <JaliPattern />
-      </div>
 
       <section className="section">
         <h2 className="section-title">Featured Dresses</h2>
@@ -107,7 +97,7 @@ export default function Home() {
         )}
       </section>
 
-      <section className="instagram-cta section">
+      <section className="instagram-cta">
         <JaliPattern />
         <div className="cta-content">
           <h2>Have a question about any dress?</h2>

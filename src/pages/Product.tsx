@@ -4,6 +4,32 @@ import { useDresses } from '../hooks/useDresses'
 import { getDressSlug, formatPrice } from '../utils'
 import InstagramCTA from '../components/InstagramCTA'
 
+function CornerTL() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+      <line x1="0" y1="80" x2="0" y2="0" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="0" y1="0" x2="80" y2="0" stroke="currentColor" strokeWidth="1.2" />
+      <polygon points="28,28 36,20 44,28 36,36" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.6" />
+      <polygon points="20,28 28,20 36,28 28,36" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
+      <polygon points="28,20 36,12 44,20 36,28" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
+      <circle cx="36" cy="28" r="1.5" fill="currentColor" opacity="0.2" />
+    </svg>
+  )
+}
+
+function CornerBR() {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
+      <line x1="80" y1="0" x2="80" y2="80" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="80" y1="80" x2="0" y2="80" stroke="currentColor" strokeWidth="1.2" />
+      <polygon points="52,52 44,60 36,52 44,44" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.6" />
+      <polygon points="60,52 52,60 44,52 52,44" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
+      <polygon points="52,60 44,68 36,60 44,52" stroke="currentColor" strokeWidth="0.3" fill="none" opacity="0.4" />
+      <circle cx="44" cy="52" r="1.5" fill="currentColor" opacity="0.2" />
+    </svg>
+  )
+}
+
 export default function ProductPage() {
   const [searchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
@@ -19,7 +45,7 @@ export default function ProductPage() {
 
   if (loading) {
     return (
-      <section className="section">
+      <section className="section" style={{ paddingTop: 120 }}>
         <p className="placeholder-text">Loading dress...</p>
       </section>
     )
@@ -27,8 +53,8 @@ export default function ProductPage() {
 
   if (error) {
     return (
-      <section className="section">
-        <p className="placeholder-text">Could not load dress information. Please try again later.</p>
+      <section className="section" style={{ paddingTop: 120 }}>
+        <p className="placeholder-text">Could not load dress information.</p>
       </section>
     )
   }
@@ -49,31 +75,15 @@ export default function ProductPage() {
     <section className="product-page">
       <div className="product-layout">
         <div className="product-images">
-          <div className="product-main-image-wrapper">
+          <div className="product-frame">
             <div className="jali-corner jali-corner-tl" aria-hidden="true">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
-                <line x1="0" y1="80" x2="0" y2="0" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="0" y1="0" x2="80" y2="0" stroke="currentColor" strokeWidth="1.5" />
-                <polygon points="24,24 32,16 40,24 32,32" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.7" />
-                <polygon points="16,24 24,16 32,24 24,32" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-                <polygon points="24,16 32,8 40,16 32,24" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-                <circle cx="32" cy="24" r="2" fill="currentColor" opacity="0.25" />
-              </svg>
+              <CornerTL />
             </div>
-
             <div className="product-main-image">
               <img src={currentImage} alt={dress.name} />
             </div>
-
             <div className="jali-corner jali-corner-br" aria-hidden="true">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
-                <line x1="80" y1="0" x2="80" y2="80" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="80" y1="80" x2="0" y2="80" stroke="currentColor" strokeWidth="1.5" />
-                <polygon points="56,56 48,64 40,56 48,48" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.7" />
-                <polygon points="64,56 56,64 48,56 56,48" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-                <polygon points="56,64 48,72 40,64 48,56" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-                <circle cx="48" cy="56" r="2" fill="currentColor" opacity="0.25" />
-              </svg>
+              <CornerBR />
             </div>
           </div>
 

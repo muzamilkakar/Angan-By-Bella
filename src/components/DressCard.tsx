@@ -13,7 +13,7 @@ export default function DressCard({ dress, index }: DressCardProps) {
       <div className="dress-card-image">
         <img src={dress.mainImage} alt={dress.name} />
       </div>
-      <div className="dress-card-info">
+      <div className="dress-card-body">
         <h3 className="dress-card-name">{dress.name}</h3>
         <span className="dress-card-price">{formatPrice(dress.price)}</span>
       </div>

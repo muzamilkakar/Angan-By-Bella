@@ -1,10 +1,44 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { instagramCTAUrl } from '../config'
-import JaliPattern from './JaliPattern'
-import Logo from './Logo'
 
-function InstagramIcon({ size = 18 }: { size?: number }) {
+function LogoMark() {
+  return (
+    <svg
+      width="160"
+      height="44"
+      viewBox="0 0 160 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Angan by Bella"
+    >
+      <text
+        x="0"
+        y="24"
+        fontFamily="'Noto Nastaliq Urdu', serif"
+        fontSize="20"
+        fill="#4A2C1A"
+        fontWeight="600"
+        letterSpacing="1.2"
+      >
+        انگن
+      </text>
+      <text
+        x="0"
+        y="40"
+        fontFamily="'Karla', sans-serif"
+        fontSize="8"
+        fill="#7A6A57"
+        letterSpacing="4"
+        fontWeight="400"
+      >
+        BY BELLA
+      </text>
+    </svg>
+  )
+}
+
+function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -16,6 +50,7 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -27,9 +62,16 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
           <button
             className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
@@ -42,51 +84,44 @@ export default function Header() {
             <span />
           </button>
 
-          <nav className="desktop-nav">
-            <div className="desktop-nav-left">
-              <Link
-                to="/"
-                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-              >
-                About
-              </Link>
-            </div>
+          <nav className="desktop-nav-left">
+            <Link
+              to="/"
+              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+            >
+              About
+            </Link>
           </nav>
 
-          <div className="header-center">
-            <Logo />
-          </div>
+          <Link to="/" className="header-logo" aria-label="Home">
+            <LogoMark />
+          </Link>
 
           <nav className="desktop-nav">
-            <div className="desktop-nav-right">
-              <Link
-                to="/category"
-                className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
-              >
-                Category
-              </Link>
-              <a
-                href={instagramCTAUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-icon-link"
-                aria-label="Visit us on Instagram"
-              >
-                <InstagramIcon size={18} />
-              </a>
-            </div>
+            <Link
+              to="/category"
+              className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
+            >
+              Category
+            </Link>
+            <a
+              href={instagramCTAUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-icon-link"
+              aria-label="Instagram"
+            >
+              <InstagramIcon />
+            </a>
           </nav>
         </div>
-
-        <div className="jali-divider" aria-hidden="true">
-          <JaliPattern />
-        </div>
+        <div className="header-scroll-indicator" aria-hidden="true" />
       </header>
 
       <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
@@ -99,7 +134,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="nav-link"
           onClick={() => setMenuOpen(false)}
-          style={{ display: 'flex', alignItems: 'center', gap: 8 }}
+          style={{ display: 'flex', alignItems: 'center', gap: 10 }}
         >
           <InstagramIcon size={20} />
           Instagram
