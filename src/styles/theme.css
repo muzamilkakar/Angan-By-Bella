@@ -294,12 +294,12 @@ h3 { font-size: 1.35rem; }
 
 .hero {
   text-align: center;
-  padding: 128px 32px 96px;
+  padding: 112px 32px 64px;
   position: relative;
 }
 
 .hero h1 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
@@ -312,7 +312,7 @@ h3 { font-size: 1.35rem; }
 }
 
 .hero-ornament {
-  margin: 40px auto 0;
+  margin: 32px auto 0;
   width: 24px;
   height: 1px;
   background: var(--angan-gold);
@@ -320,74 +320,70 @@ h3 { font-size: 1.35rem; }
 }
 
 /* ════════════════════════════════════════
-   CATEGORIES
+   SHOP STRIP (categories + season combined)
    ════════════════════════════════════════ */
 
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 12px;
+.shop-strip {
+  padding: 0 32px 64px;
+  max-width: var(--mw);
+  margin: 0 auto;
+  width: 100%;
 }
 
-.category-card {
-  padding: 28px 12px 24px;
-  text-align: center;
-  transition: all var(--t);
-  border-bottom: 1px solid rgba(176, 141, 91, 0.06);
-  border-radius: 0;
+.shop-strip-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  border-top: 1px solid rgba(176, 141, 91, 0.06);
+  padding-top: 24px;
 }
 
-.category-card:hover {
-  border-bottom-color: var(--angan-gold);
+.category-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
 
-.category-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 14px;
-  font-style: italic;
+.category-chip {
+  font-family: 'Karla', sans-serif;
+  font-size: 12px;
   font-weight: 500;
+  color: var(--angan-text-muted);
+  padding: 6px 16px;
+  border: 1px solid rgba(176, 141, 91, 0.1);
+  border-radius: 20px;
+  transition: all var(--t);
+  letter-spacing: 0.02em;
+}
+
+.category-chip:hover {
+  border-color: var(--angan-gold);
   color: var(--angan-brown);
 }
 
-/* ════════════════════════════════════════
-   SEASON
-   ════════════════════════════════════════ */
-
-.season-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+.season-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
-.season-card {
+.season-chip {
   background: var(--angan-brown);
-  padding: 64px 32px;
-  text-align: center;
-  transition: all var(--t);
-  position: relative;
-}
-
-.season-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20%;
-  right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--angan-gold), transparent);
-  opacity: 0.2;
-}
-
-.season-card:hover {
-  opacity: 0.95;
-}
-
-.season-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 500;
   color: var(--angan-sand);
+  font-family: 'Karla', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 24px;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all var(--t);
+}
+
+.season-chip:hover {
+  opacity: 0.85;
 }
 
 /* ════════════════════════════════════════
@@ -849,7 +845,26 @@ footer p {
   }
 
   .hero {
-    padding: 144px 40px 96px;
+    padding: 128px 40px 72px;
+  }
+
+  .shop-strip {
+    padding: 0 40px 72px;
+  }
+
+  .shop-strip-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  .category-strip {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .season-strip {
+    flex-shrink: 0;
   }
 
   .product-layout {

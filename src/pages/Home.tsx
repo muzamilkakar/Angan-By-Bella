@@ -36,37 +36,32 @@ export default function Home() {
         <div className="hero-ornament" aria-hidden="true" />
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
-        <h2 className="section-title">Categories</h2>
-        <div className="category-grid">
-          {categories.map((cat) => (
-            <Link
-              key={cat.slug}
-              to={`/category?type=${cat.slug}`}
-              className="category-card"
-            >
-              <span className="category-name">{cat.name}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-wide" style={{ background: 'var(--angan-sand)' }}>
-        <div style={{ maxWidth: 'var(--mw)', margin: '0 auto' }}>
-          <h2 className="section-title">Shop the Season</h2>
-          <div className="season-grid">
+      <div className="shop-strip">
+        <div className="shop-strip-inner">
+          <div className="category-strip">
+            {categories.map((cat) => (
+              <Link
+                key={cat.slug}
+                to={`/category?type=${cat.slug}`}
+                className="category-chip"
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+          <div className="season-strip">
             {seasons.map((s) => (
               <Link
                 key={s.season}
                 to={`/category?season=${s.season}`}
-                className="season-card"
+                className="season-chip"
               >
-                <span className="season-name">{s.name}</span>
+                {s.name}
               </Link>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       <section className="section">
         <h2 className="section-title">Featured Dresses</h2>
