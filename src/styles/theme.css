@@ -131,18 +131,9 @@ h3 { font-size: 1.35rem; }
 }
 
 .header-center svg {
-  height: 42px;
+  height: 44px;
   width: auto;
   display: block;
-}
-
-.header-label {
-  font-family: 'Karla', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  color: var(--angan-text-muted);
 }
 
 .desktop-nav {
@@ -824,11 +815,7 @@ footer p {
   }
 
   .header-center svg {
-    height: 46px;
-  }
-
-  .header-label {
-    font-size: 10px;
+    height: 48px;
   }
 
   .nav-link {

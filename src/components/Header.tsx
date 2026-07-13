@@ -6,17 +6,18 @@ function LogoMark() {
   return (
     <svg
       width="168"
-      height="46"
-      viewBox="0 0 168 46"
+      height="50"
+      viewBox="0 0 168 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Angan by Bella"
     >
       <text
-        x="0"
-        y="24"
+        x="84"
+        y="26"
+        textAnchor="middle"
         fontFamily="'Noto Nastaliq Urdu', serif"
-        fontSize="20"
+        fontSize="22"
         fill="#4A2C1A"
         fontWeight="600"
         letterSpacing="1.2"
@@ -24,12 +25,13 @@ function LogoMark() {
         انگن
       </text>
       <text
-        x="0"
-        y="41"
+        x="84"
+        y="44"
+        textAnchor="middle"
         fontFamily="'Karla', sans-serif"
-        fontSize="8"
+        fontSize="9"
         fill="#7A6A57"
-        letterSpacing="4.5"
+        letterSpacing="5"
         fontWeight="400"
       >
         BY BELLA
@@ -93,7 +95,6 @@ export default function Header() {
 
           <Link to="/" className="header-center" aria-label="Home">
             <LogoMark />
-            <span className="header-label">By Bella</span>
           </Link>
 
           <nav className="desktop-nav" style={{ justifyContent: 'flex-end' }}>
