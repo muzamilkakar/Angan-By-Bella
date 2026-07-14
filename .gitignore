@@ -1,3 +1,9 @@
 
+node_modules
+dist
+*.local
+*.tsbuildinfo
+TOKEN FOR GIT.txt
+
 Navigation bar Design sample.*
 _nav_portion.png
