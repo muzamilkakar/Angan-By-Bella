@@ -80,52 +80,53 @@ export default function Header() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <button
-            className="hamburger-btn"
-            onClick={() => setMenuOpen(prev => !prev)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-
-          <div className="header-row-top">
-            <Link to="/" className="header-center" aria-label="Home">
-              <LogoMark />
-            </Link>
+          <div className="header-left">
+            <button
+              className="hamburger-btn"
+              onClick={() => setMenuOpen(prev => !prev)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
           </div>
 
-          <div className="nav-glass-pill">
-            <Link
-              to="/"
-              className={`nav-pill-item ${location.pathname === '/' ? 'active' : ''}`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`nav-pill-item ${location.pathname === '/about' ? 'active' : ''}`}
-            >
-              About
-            </Link>
-            <Link
-              to="/category"
-              className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
-            >
-              Category
-            </Link>
-            <a
-              href={instagramCTAUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-pill-icon"
-              aria-label="Instagram"
-            >
-              <InstagramIcon />
-            </a>
+          <Link to="/" className="header-center" aria-label="Home">
+            <LogoMark />
+          </Link>
+
+          <div className="header-right">
+            <div className="nav-glass-pill">
+              <Link
+                to="/"
+                className={`nav-pill-item ${location.pathname === '/' ? 'active' : ''}`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`nav-pill-item ${location.pathname === '/about' ? 'active' : ''}`}
+              >
+                About
+              </Link>
+              <Link
+                to="/category"
+                className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
+              >
+                Category
+              </Link>
+              <a
+                href={instagramCTAUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-pill-icon"
+                aria-label="Instagram"
+              >
+                <InstagramIcon />
+              </a>
+            </div>
           </div>
         </div>
       </header>

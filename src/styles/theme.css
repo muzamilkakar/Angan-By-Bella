@@ -163,23 +163,23 @@ h3 { font-size: 1.35rem; }
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 80px;
-  gap: 8px;
   position: relative;
 }
 
-.header-row-top {
+.header-left {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
+  min-width: 80px;
 }
 
 .header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,18 +198,27 @@ h3 { font-size: 1.35rem; }
   opacity: 0.75;
 }
 
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+  justify-content: flex-end;
+}
+
 /* ── Glass Pill Nav ── */
 
 .nav-glass-pill {
   display: none;
   align-items: center;
-  gap: 4px;
-  background: rgba(var(--angan-cream-rgb), 0.5);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 0.5px solid rgba(176, 141, 91, 0.12);
-  border-radius: 24px;
-  padding: 4px;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(176, 141, 91, 0.07), rgba(var(--angan-cream-rgb), 0.55));
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 0.5px solid rgba(176, 141, 91, 0.15);
+  border-radius: 28px;
+  padding: 5px 6px;
+  box-shadow: 0 1px 6px rgba(176, 141, 91, 0.04);
 }
 
 .nav-pill-item {
@@ -219,39 +228,38 @@ h3 { font-size: 1.35rem; }
   color: var(--angan-text-muted);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 20px;
+  padding: 8px 18px;
+  border-radius: 22px;
   transition: all var(--t);
-  position: relative;
 }
 
 .nav-pill-item:hover {
   color: var(--angan-brown);
-  background: rgba(176, 141, 91, 0.06);
+  background: rgba(176, 141, 91, 0.08);
 }
 
 .nav-pill-item.active {
   color: var(--angan-brown);
   font-weight: 600;
-  background: rgba(176, 141, 91, 0.08);
-  border: 0.5px solid rgba(176, 141, 91, 0.15);
+  background: rgba(176, 141, 91, 0.1);
+  border: 0.5px solid rgba(176, 141, 91, 0.2);
 }
 
 .nav-pill-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   color: var(--angan-text-muted);
   transition: all var(--t);
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .nav-pill-icon:hover {
   color: var(--angan-brown);
-  background: rgba(176, 141, 91, 0.06);
+  background: rgba(176, 141, 91, 0.08);
 }
 
 /* ── Hamburger ── */
@@ -1001,17 +1009,26 @@ footer a:hover {
 @media (min-width: 768px) {
   .header-inner {
     padding: 0 40px;
-    min-height: 96px;
-    gap: 10px;
+    min-height: 88px;
   }
 
   .header-center svg {
     height: 52px;
   }
 
+  .header-left,
+  .header-right {
+    min-width: 100px;
+  }
+
+  .nav-glass-pill {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
   .nav-pill-item {
     font-size: 12px;
-    padding: 8px 20px;
+    padding: 10px 22px;
   }
 
   .nav-pill-icon {
