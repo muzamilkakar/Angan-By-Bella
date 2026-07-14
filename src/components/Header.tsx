@@ -33,7 +33,6 @@ function LogoMark() {
         انگن
       </text>
 
-      {/* Decorative divider: gold line with diamond ends */}
       <line x1="60" y1="38" x2="140" y2="38" stroke="url(#goldLine)" strokeWidth="0.5" />
       <polygon points="60,35 63,38 60,41 57,38" fill="#B08D5B" opacity="0.3" />
       <polygon points="140,35 143,38 140,41 137,38" fill="#B08D5B" opacity="0.3" />
@@ -54,7 +53,7 @@ function LogoMark() {
   )
 }
 
-function InstagramIcon({ size = 16 }: { size?: number }) {
+function InstagramIcon({ size = 14 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -82,39 +81,39 @@ export default function Header() {
       <header className="site-header">
         <div className="header-inner">
           <button
-            className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
+            className="hamburger-btn"
             onClick={() => setMenuOpen(prev => !prev)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
+            style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}
           >
             <span />
             <span />
             <span />
           </button>
 
-          <nav className="desktop-nav" style={{ justifyContent: 'flex-start' }}>
+          <div className="header-row-top">
+            <Link to="/" className="header-center" aria-label="Home">
+              <LogoMark />
+            </Link>
+          </div>
+
+          <div className="nav-glass-pill">
             <Link
               to="/"
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+              className={`nav-pill-item ${location.pathname === '/' ? 'active' : ''}`}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+              className={`nav-pill-item ${location.pathname === '/about' ? 'active' : ''}`}
             >
               About
             </Link>
-          </nav>
-
-          <Link to="/" className="header-center" aria-label="Home">
-            <LogoMark />
-          </Link>
-
-          <nav className="desktop-nav" style={{ justifyContent: 'flex-end' }}>
             <Link
               to="/category"
-              className={`nav-link ${location.pathname === '/category' ? 'active' : ''}`}
+              className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
             >
               Category
             </Link>
@@ -122,12 +121,12 @@ export default function Header() {
               href={instagramCTAUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-icon-link"
+              className="nav-pill-icon"
               aria-label="Instagram"
             >
               <InstagramIcon />
             </a>
-          </nav>
+          </div>
         </div>
       </header>
 

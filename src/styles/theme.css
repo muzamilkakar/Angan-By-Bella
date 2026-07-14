@@ -163,15 +163,23 @@ h3 { font-size: 1.35rem; }
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   min-height: 80px;
+  gap: 8px;
+  position: relative;
+}
+
+.header-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
 .header-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +188,7 @@ h3 { font-size: 1.35rem; }
 }
 
 .header-center svg {
-  height: 52px;
+  height: 44px;
   width: auto;
   display: block;
   transition: opacity var(--t);
@@ -190,71 +198,60 @@ h3 { font-size: 1.35rem; }
   opacity: 0.75;
 }
 
-.desktop-nav {
+/* ── Glass Pill Nav ── */
+
+.nav-glass-pill {
   display: none;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
+  background: rgba(var(--angan-cream-rgb), 0.5);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 0.5px solid rgba(176, 141, 91, 0.12);
+  border-radius: 24px;
+  padding: 4px;
 }
 
-.nav-link {
+.nav-pill-item {
   font-family: 'Karla', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--angan-text-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 6px 18px;
-  border-radius: 2px;
-  transition: color var(--t);
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all var(--t);
   position: relative;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: var(--angan-gold);
-  opacity: 0;
-  transition: all var(--t);
-}
-
-.nav-link:hover {
+.nav-pill-item:hover {
   color: var(--angan-brown);
+  background: rgba(176, 141, 91, 0.06);
 }
 
-.nav-link:hover::after {
-  left: 18px;
-  width: calc(100% - 36px);
-  opacity: 0.5;
-}
-
-.nav-link.active {
+.nav-pill-item.active {
   color: var(--angan-brown);
   font-weight: 600;
+  background: rgba(176, 141, 91, 0.08);
+  border: 0.5px solid rgba(176, 141, 91, 0.15);
 }
 
-.nav-link.active::after {
-  left: 18px;
-  width: calc(100% - 36px);
-  opacity: 1;
-}
-
-.nav-icon-link {
+.nav-pill-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   color: var(--angan-text-muted);
-  transition: color var(--t);
-  margin-left: 8px;
+  transition: all var(--t);
+  margin-left: 2px;
 }
 
-.nav-icon-link:hover {
+.nav-pill-icon:hover {
   color: var(--angan-brown);
+  background: rgba(176, 141, 91, 0.06);
 }
 
 /* ── Hamburger ── */
@@ -323,6 +320,9 @@ h3 { font-size: 1.35rem; }
   text-transform: none;
   letter-spacing: 0;
   color: var(--angan-brown);
+  padding: 6px 18px;
+  border-radius: 2px;
+  transition: color var(--t);
 }
 
 /* ════════════════════════════════════════
@@ -993,7 +993,7 @@ footer a:hover {
 
 @media (min-width: 640px) {
   .hamburger-btn { display: none; }
-  .desktop-nav { display: flex; }
+  .nav-glass-pill { display: flex; }
   .mobile-nav { display: none; }
   .season-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -1001,16 +1001,22 @@ footer a:hover {
 @media (min-width: 768px) {
   .header-inner {
     padding: 0 40px;
-    min-height: 88px;
+    min-height: 96px;
+    gap: 10px;
   }
 
   .header-center svg {
-    height: 56px;
+    height: 52px;
   }
 
-  .nav-link {
-    font-size: 13px;
-    padding: 10px 24px;
+  .nav-pill-item {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+
+  .nav-pill-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .section {
