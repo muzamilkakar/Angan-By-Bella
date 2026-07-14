@@ -211,14 +211,13 @@ h3 { font-size: 1.35rem; }
 .nav-glass-pill {
   display: none;
   align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, rgba(176, 141, 91, 0.07), rgba(var(--angan-cream-rgb), 0.55));
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(176, 141, 91, 0.08), rgba(var(--angan-cream-rgb), 0.45));
   backdrop-filter: blur(14px) saturate(180%);
   -webkit-backdrop-filter: blur(14px) saturate(180%);
-  border: 0.5px solid rgba(176, 141, 91, 0.15);
+  border: 0.5px solid rgba(176, 141, 91, 0.12);
   border-radius: 28px;
-  padding: 5px 6px;
-  box-shadow: 0 1px 6px rgba(176, 141, 91, 0.04);
+  padding: 4px 6px;
 }
 
 .nav-pill-item {
@@ -243,6 +242,16 @@ h3 { font-size: 1.35rem; }
   font-weight: 600;
   background: rgba(176, 141, 91, 0.1);
   border: 0.5px solid rgba(176, 141, 91, 0.2);
+}
+
+.nav-pill-sep {
+  display: block;
+  width: 3px;
+  height: 3px;
+  background: var(--angan-gold);
+  opacity: 0.15;
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .nav-pill-icon {
@@ -1022,13 +1031,13 @@ footer a:hover {
   }
 
   .nav-glass-pill {
-    padding: 6px 8px;
-    gap: 6px;
+    padding: 5px 8px;
+    gap: 10px;
   }
 
   .nav-pill-item {
     font-size: 12px;
-    padding: 10px 22px;
+    padding: 10px 24px;
   }
 
   .nav-pill-icon {

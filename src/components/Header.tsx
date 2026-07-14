@@ -105,12 +105,14 @@ export default function Header() {
               >
                 Home
               </Link>
+              <span className="nav-pill-sep" aria-hidden="true" />
               <Link
                 to="/about"
                 className={`nav-pill-item ${location.pathname === '/about' ? 'active' : ''}`}
               >
                 About
               </Link>
+              <span className="nav-pill-sep" aria-hidden="true" />
               <Link
                 to="/category"
                 className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
