@@ -206,9 +206,9 @@ h3 { font-size: 1.35rem; }
   display: none;
   align-items: center;
   gap: 16px;
-  background: rgba(var(--angan-cream-rgb), 0.35);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  background: rgba(var(--angan-cream-rgb), 0.6);
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
   border: 0.5px solid rgba(176, 141, 91, 0.1);
   border-radius: 28px;
   padding: 4px 8px;
@@ -456,14 +456,16 @@ h3 { font-size: 1.35rem; }
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  border: 1px solid rgba(176, 141, 91, 0.12);
+  background: rgba(176, 141, 91, 0.03);
+  border: 1px solid rgba(176, 141, 91, 0.08);
   border-radius: 0;
   padding: 24px 32px;
-  transition: border-color var(--t);
+  transition: all var(--t);
 }
 
 .shop-strip-inner:hover {
-  border-color: rgba(176, 141, 91, 0.25);
+  border-color: rgba(176, 141, 91, 0.18);
+  background: rgba(176, 141, 91, 0.05);
 }
 
 .category-strip {
