@@ -172,7 +172,7 @@ h3 { font-size: 1.35rem; }
 .header-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .header-center {
@@ -184,7 +184,7 @@ h3 { font-size: 1.35rem; }
 }
 
 .header-left .header-center svg {
-  height: 40px;
+  height: 48px;
   width: auto;
   display: block;
   transition: opacity var(--t);
@@ -447,9 +447,7 @@ h3 { font-size: 1.35rem; }
    ════════════════════════════════════════ */
 
 .shop-strip {
-  padding: 0 32px 64px;
-  max-width: var(--mw);
-  margin: 0 auto;
+  padding: 0 0 64px;
   width: 100%;
 }
 
@@ -458,9 +456,14 @@ h3 { font-size: 1.35rem; }
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  border: 0.5px solid rgba(176, 141, 91, 0.08);
-  border-radius: 16px;
-  padding: 24px 20px;
+  border: 1px solid rgba(176, 141, 91, 0.12);
+  border-radius: 0;
+  padding: 24px 32px;
+  transition: border-color var(--t);
+}
+
+.shop-strip-inner:hover {
+  border-color: rgba(176, 141, 91, 0.25);
 }
 
 .category-strip {
@@ -1017,11 +1020,11 @@ footer a:hover {
   }
 
   .header-left {
-    gap: 24px;
+    gap: 28px;
   }
 
   .header-left .header-center svg {
-    height: 48px;
+    height: 56px;
   }
 
   .nav-glass-pill {
@@ -1066,14 +1069,10 @@ footer a:hover {
     right: 40px;
   }
 
-  .shop-strip {
-    padding: 0 40px 72px;
-  }
-
   .shop-strip-inner {
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 24px;
+    padding: 20px 40px;
   }
 
   .category-strip {
