@@ -91,11 +91,10 @@ export default function Header() {
               <span />
               <span />
             </button>
+            <Link to="/" className="header-center" aria-label="Home">
+              <LogoMark />
+            </Link>
           </div>
-
-          <Link to="/" className="header-center" aria-label="Home">
-            <LogoMark />
-          </Link>
 
           <div className="header-right">
             <div className="nav-glass-pill">
