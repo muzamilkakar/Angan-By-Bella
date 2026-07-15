@@ -4,6 +4,8 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
+import MoodSpotlight from '../components/MoodSpotlight'
+import InstagramGrid from '../components/InstagramGrid'
 
 const categories = [
   { name: 'Embroidered', slug: 'embroidered' },
@@ -29,14 +31,34 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero reveal">
-        <h1>Timeless Elegance</h1>
-        <p>
-          Handpicked women's clothing in Quetta — curated for the woman who
-          values grace, quality, and tradition.
-        </p>
-        <div className="hero-ornament" aria-hidden="true">
-          <div className="hero-ornament-diamond" />
+      <section className="editorial-hero reveal">
+        <div className="editorial-hero-text">
+          <h1>
+            Timeless <em>Elegance</em>
+          </h1>
+          <p>
+            Handpicked women's clothing in Quetta — curated for the woman who
+            values grace, quality, and tradition.
+          </p>
+          <div className="hero-ornament" aria-hidden="true">
+            <div className="hero-ornament-diamond" />
+          </div>
+        </div>
+        <div className="editorial-hero-visual">
+          <div className="editorial-hero-gradient" />
+          <div className="editorial-hero-jali">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <pattern id="hero-jali" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect width="20" height="20" fill="none" />
+                  <polygon points="10,0 20,6 15,12 10,6 5,12 0,6" fill="none" stroke="currentColor" strokeWidth="0.3" />
+                  <circle cx="10" cy="6" r="0.8" fill="currentColor" opacity="0.15" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#hero-jali)" />
+            </svg>
+          </div>
+          <div className="editorial-hero-gold" />
         </div>
       </section>
 
@@ -86,6 +108,10 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      <InstagramGrid />
+
+      <MoodSpotlight />
 
       <section className="instagram-cta reveal reveal-delay-3">
         <div className="cta-content">

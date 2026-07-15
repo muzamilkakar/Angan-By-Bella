@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug, formatPrice } from '../utils'
+import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
 
 function CornerTL() {
@@ -127,6 +128,21 @@ export default function ProductPage() {
           <InstagramCTA label="Ask About This Dress on Instagram" />
         </div>
       </div>
+
+      {dresses.length > 1 && (
+        <section className="section related-section">
+          <h2 className="section-title">You May Also Like</h2>
+          <div className="dress-grid related-grid">
+            {dresses
+              .filter(d => d.name !== dress.name)
+              .slice(0, 3)
+              .map((related) => {
+                const idx = dresses.indexOf(related)
+                return <DressCard key={getDressSlug(related, idx)} dress={related} index={idx} />
+              })}
+          </div>
+        </section>
+      )}
     </section>
   )
 }

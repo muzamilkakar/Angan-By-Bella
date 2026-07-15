@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
     <footer>
+      <div className="footer-ornament" aria-hidden="true" />
       <div className="footer-brand">انگن</div>
       <a
         href="https://instagram.com/angan.by.bella"

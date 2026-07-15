@@ -14,12 +14,16 @@ export default function About() {
         to every piece we curate.
       </p>
 
+      <div className="about-divider reveal reveal-delay-2" aria-hidden="true" />
+
       <p className="about-story reveal reveal-delay-2">
         Based in Quetta, Angan by Bella is a women's clothing brand built on
         a love for timeless design and honest quality. Each dress is handpicked
         — from embroidered kurtis to flowing silks — with an eye for what
         endures beyond a single season.
       </p>
+
+      <div className="about-divider reveal reveal-delay-3" aria-hidden="true" />
 
       <p className="about-story reveal reveal-delay-3">
         We believe elegance is not about following trends. It is about finding
