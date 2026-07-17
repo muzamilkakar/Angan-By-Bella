@@ -1,15 +1,24 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function Preloader() {
+interface PreloaderProps {
+  visible: boolean;
+}
+
+export default function Preloader({ visible }: PreloaderProps) {
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setHidden(true), 3000)
-    return () => clearTimeout(timer)
-  }, [])
+    if (!visible) {
+      const timer = setTimeout(() => setHidden(true), 600)
+      return () => clearTimeout(timer)
+    }
+    setHidden(false)
+  }, [visible])
+
+  if (hidden) return null
 
   return (
-    <div className={`preloader${hidden ? ' hidden' : ''}`}>
+    <div className={`preloader ${visible ? '' : 'preloader-fade'}`}>
       <div className="preloader-inner">
         <span className="preloader-logo">انگن</span>
         <div className="preloader-line" />
