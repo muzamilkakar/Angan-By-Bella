@@ -15,19 +15,12 @@
       "mainImage": "/images/uploads/3.jpeg",
       "season": "Summer",
       "price": 4500,
-      "galleryImages": [
-        "/images/placeholders/sample-2b.svg"
-      ],
-      "name": "Sample Dress Two",
+      "galleryImages": [],
+      "name": "PASHMINA",
       "featured": true,
-      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "description": "PASHMINA",
       "category": "Printed",
-      "highlights": [
-        {
-          "label": "Printed Detail",
-          "image": "/images/placeholders/detail-3.svg"
-        }
-      ]
+      "highlights": []
     },
     {
       "mainImage": "/images/placeholders/sample-3.svg",
