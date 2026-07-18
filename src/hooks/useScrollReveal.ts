@@ -1,7 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-export function useScrollReveal() {
+export function useScrollReveal(deps: unknown[] = []) {
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
   useEffect(() => {
+    observerRef.current?.disconnect()
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -13,15 +17,15 @@ export function useScrollReveal() {
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     )
 
+    observerRef.current = observer
+
     const elements = document.querySelectorAll('.reveal')
     for (const el of elements) {
       observer.observe(el)
     }
 
     return () => {
-      for (const el of elements) {
-        observer.unobserve(el)
-      }
+      observer.disconnect()
     }
-  }, [])
+  }, deps)
 }

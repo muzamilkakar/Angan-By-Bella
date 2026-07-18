@@ -24,7 +24,7 @@ const seasons = [
 
 export default function Home() {
   const { dresses, loading } = useDresses()
-  useScrollReveal()
+  useScrollReveal([loading])
 
   const featured = dresses.filter(d => d.featured)
   const display = featured.length > 0 ? featured : dresses.slice(0, 3)

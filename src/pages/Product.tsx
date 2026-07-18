@@ -31,9 +31,9 @@ function CornerBR() {
 }
 
 export default function ProductPage() {
-  useScrollReveal()
   const [searchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
+  useScrollReveal([loading])
   const slug = searchParams.get('slug')
 
   const matchIndex = slug !== null

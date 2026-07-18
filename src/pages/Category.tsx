@@ -9,9 +9,9 @@ const ALL_CATEGORIES: Category[] = ["Embroidered", "Printed", "Solids", "Silk", 
 const ALL_SEASONS: Season[] = ["Winter", "Summer", "All Season"]
 
 export default function CategoryPage() {
-  useScrollReveal()
   const [searchParams, setSearchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
+  useScrollReveal([loading])
 
   const activeType = searchParams.get('type')
   const activeSeason = searchParams.get('season')
