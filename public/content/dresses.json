@@ -4,50 +4,32 @@
       "mainImage": "/images/uploads/2.jpeg",
       "season": "Winter",
       "price": 6500,
-      "galleryImages": [
-        "/images/placeholders/sample-1b.svg"
-      ],
+      "galleryImages": [],
       "name": "ZAYA",
       "featured": true,
-      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "description": "ZAYA",
       "category": "Embroidered",
-      "highlights": [
-        {
-          "label": "Embroidered Neckline",
-          "image": "/images/placeholders/detail-1.svg"
-        },
-        {
-          "label": "Embroidered Hem",
-          "image": "/images/placeholders/detail-2.svg"
-        }
-      ]
+      "highlights": []
     },
     {
       "mainImage": "/images/uploads/3.jpeg",
       "season": "Summer",
       "price": 4500,
-      "galleryImages": [
-        "/images/placeholders/sample-2b.svg"
-      ],
-      "name": "Sample Dress Two",
+      "galleryImages": [],
+      "name": "PASHMINA",
       "featured": true,
-      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "description": "PASHMINA",
       "category": "Printed",
-      "highlights": [
-        {
-          "label": "Printed Detail",
-          "image": "/images/placeholders/detail-3.svg"
-        }
-      ]
+      "highlights": []
     },
     {
-      "mainImage": "/images/placeholders/sample-3.svg",
+      "mainImage": "/images/uploads/5.jpeg",
       "season": "All Season",
-      "price": 8500,
+      "price": 7498,
       "galleryImages": [],
-      "name": "Sample Dress Three",
+      "name": "Zareen",
       "featured": false,
-      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "description": "Zareen black",
       "category": "Silk",
       "highlights": []
     }
