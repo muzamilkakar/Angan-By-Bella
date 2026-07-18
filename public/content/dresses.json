@@ -4,23 +4,12 @@
       "mainImage": "/images/uploads/2.jpeg",
       "season": "Winter",
       "price": 6500,
-      "galleryImages": [
-        "/images/placeholders/sample-1b.svg"
-      ],
+      "galleryImages": [],
       "name": "ZAYA",
       "featured": true,
-      "description": "Placeholder description — the shop owner will replace this via /admin.",
+      "description": "ZAYA",
       "category": "Embroidered",
-      "highlights": [
-        {
-          "label": "Embroidered Neckline",
-          "image": "/images/placeholders/detail-1.svg"
-        },
-        {
-          "label": "Embroidered Hem",
-          "image": "/images/placeholders/detail-2.svg"
-        }
-      ]
+      "highlights": []
     },
     {
       "mainImage": "/images/uploads/3.jpeg",
