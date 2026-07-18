@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="footer-ornament" aria-hidden="true" />
       <div className="footer-brand">انگن</div>
       <a
-        href="https://instagram.com/angan.by.bella"
+        href="https://instagram.com/angan_by_bellaa"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -13,7 +13,7 @@ export default function Footer() {
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
         </svg>
-        @angan.by.bella
+        @angan_by_bellaa
       </a>
       <p>Angan by Bella &mdash; Quetta</p>
     </footer>

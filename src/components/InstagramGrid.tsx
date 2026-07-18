@@ -1,13 +1,15 @@
 const posts = [
-  { id: 1, likes: 134, caption: 'A quiet moment in cream silk', handle: 'angan.by.bella' },
-  { id: 2, likes: 89, caption: 'Mornings in the courtyard', handle: 'angan.by.bella' },
-  { id: 3, likes: 212, caption: 'Gold embroidery on ivory', handle: 'angan.by.bella' },
-  { id: 4, likes: 67, caption: 'Summer breeze chiffon', handle: 'angan.by.bella' },
-  { id: 5, likes: 156, caption: 'The edit: warm tones', handle: 'angan.by.bella' },
-  { id: 6, likes: 98, caption: 'Draped in tradition', handle: 'angan.by.bella' },
-  { id: 7, likes: 178, caption: 'Evening in Quetta', handle: 'angan.by.bella' },
-  { id: 8, likes: 45, caption: 'Handwoven details', handle: 'angan.by.bella' },
+  { id: 1, likes: 134, caption: 'A quiet moment in cream silk', handle: 'angan_by_bellaa' },
+  { id: 2, likes: 89, caption: 'Mornings in the courtyard', handle: 'angan_by_bellaa' },
+  { id: 3, likes: 212, caption: 'Gold embroidery on ivory', handle: 'angan_by_bellaa' },
+  { id: 4, likes: 67, caption: 'Summer breeze chiffon', handle: 'angan_by_bellaa' },
+  { id: 5, likes: 156, caption: 'The edit: warm tones', handle: 'angan_by_bellaa' },
+  { id: 6, likes: 98, caption: 'Draped in tradition', handle: 'angan_by_bellaa' },
+  { id: 7, likes: 178, caption: 'Evening in Quetta', handle: 'angan_by_bellaa' },
+  { id: 8, likes: 45, caption: 'Handwoven details', handle: 'angan_by_bellaa' },
 ]
+
+const PROFILE_URL = 'https://instagram.com/angan_by_bellaa'
 
 function HeartIcon() {
   return (
@@ -22,11 +24,17 @@ export default function InstagramGrid() {
     <section className="instagram-grid-section reveal">
       <div className="section-header" style={{ marginBottom: 32 }}>
         <h2 className="section-title">From Our Courtyard</h2>
-        <p className="section-subtitle">Follow along @angan.by.bella</p>
+        <p className="section-subtitle">Follow along @angan_by_bellaa</p>
       </div>
       <div className="instagram-grid">
         {posts.map((post) => (
-          <div key={post.id} className="instagram-post">
+          <a
+            key={post.id}
+            href={PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="instagram-post"
+          >
             <div className="instagram-post-bg">
               <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
@@ -45,7 +53,7 @@ export default function InstagramGrid() {
               </span>
               <span className="instagram-post-handle">@{post.handle}</span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
