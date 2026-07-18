@@ -37,7 +37,7 @@ export default function Home() {
             Timeless <em>Elegance</em>
           </h1>
           <p>
-            Handpicked women's clothing in Quetta — curated for the woman who
+            Handpicked women's clothing in Quetta curated for the woman who
             values grace, quality, and tradition.
           </p>
           <div className="hero-ornament" aria-hidden="true">
