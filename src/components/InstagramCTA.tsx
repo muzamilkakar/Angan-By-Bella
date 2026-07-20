@@ -12,15 +12,16 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
 
 interface InstagramCTAProps {
   label?: string;
+  className?: string;
 }
 
-export default function InstagramCTA({ label = "Ask on Instagram" }: InstagramCTAProps) {
+export default function InstagramCTA({ label = "Ask on Instagram", className = "" }: InstagramCTAProps) {
   return (
     <a
       href={instagramCTAUrl()}
       target="_blank"
       rel="noopener noreferrer"
-      className="cta-button instagram-ask-btn"
+      className={`cta-button instagram-ask-btn ${className}`.trim()}
     >
       <InstagramIcon size={18} />
       {label}

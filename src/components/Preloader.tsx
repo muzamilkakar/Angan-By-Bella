@@ -9,7 +9,7 @@ export default function Preloader({ visible }: PreloaderProps) {
 
   useEffect(() => {
     if (!visible) {
-      const timer = setTimeout(() => setHidden(true), 600)
+      const timer = setTimeout(() => setHidden(true), 800)
       return () => clearTimeout(timer)
     }
     setHidden(false)

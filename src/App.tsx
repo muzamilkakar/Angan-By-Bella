@@ -13,9 +13,11 @@ export default function App() {
   const [preloader, setPreloader] = useState(true)
   const [initial, setInitial] = useState(true)
 
-  const trigger = useCallback(() => {
+  const duration = location.pathname === '/' ? 2300 : 1500
+
+  const trigger = useCallback((ms: number) => {
     setPreloader(true)
-    const timer = setTimeout(() => setPreloader(false), 2300)
+    const timer = setTimeout(() => setPreloader(false), ms)
     return () => clearTimeout(timer)
   }, [])
 
@@ -24,12 +26,14 @@ export default function App() {
       setInitial(false)
       return
     }
-    const cleanup = trigger()
+    const cleanup = trigger(duration)
     return cleanup
   }, [location.pathname])
 
   useEffect(() => {
-    const timer = setTimeout(() => setPreloader(false), 2300)
+    const path = location.pathname
+    const ms = path === '/' ? 2300 : 1500
+    const timer = setTimeout(() => setPreloader(false), ms)
     return () => clearTimeout(timer)
   }, [])
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -6,35 +6,15 @@ import { getDressSlug, formatPrice } from '../utils'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
 
-function CornerTL() {
-  return (
-    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
-      <line x1="0" y1="72" x2="0" y2="0" stroke="currentColor" strokeWidth="1" />
-      <line x1="0" y1="0" x2="72" y2="0" stroke="currentColor" strokeWidth="1" />
-      <polygon points="28,28 36,20 44,28 36,36" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-      <polygon points="20,28 28,20 36,28 28,36" stroke="currentColor" strokeWidth="0.25" fill="none" opacity="0.35" />
-      <circle cx="36" cy="28" r="1.5" fill="currentColor" opacity="0.15" />
-    </svg>
-  )
-}
-
-function CornerBR() {
-  return (
-    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
-      <line x1="72" y1="0" x2="72" y2="72" stroke="currentColor" strokeWidth="1" />
-      <line x1="72" y1="72" x2="0" y2="72" stroke="currentColor" strokeWidth="1" />
-      <polygon points="44,44 36,52 28,44 36,36" stroke="currentColor" strokeWidth="0.4" fill="none" opacity="0.5" />
-      <polygon points="52,44 44,52 36,44 44,36" stroke="currentColor" strokeWidth="0.25" fill="none" opacity="0.35" />
-      <circle cx="36" cy="44" r="1.5" fill="currentColor" opacity="0.15" />
-    </svg>
-  )
-}
-
 export default function ProductPage() {
   const [searchParams] = useSearchParams()
   const { dresses, loading, error } = useDresses()
   useScrollReveal([loading])
   const slug = searchParams.get('slug')
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [slug])
 
   const matchIndex = slug !== null
     ? dresses.findIndex((d, i) => getDressSlug(d, i) === slug)
@@ -43,6 +23,17 @@ export default function ProductPage() {
   const dress = matchIndex !== -1 ? dresses[matchIndex] : null
 
   const [activeImage, setActiveImage] = useState<string | null>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+
+  function handleMouseMove(e: React.MouseEvent) {
+    const el = imageRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    el.style.setProperty('--zoom-x', `${x}%`)
+    el.style.setProperty('--zoom-y', `${y}%`)
+  }
 
   if (loading) {
     return (
@@ -73,27 +64,22 @@ export default function ProductPage() {
   const currentImage = activeImage ?? dress.mainImage
 
   return (
-    <section className="product-page">
-      <div className="product-layout">
-        <div className="product-images reveal">
-          <div style={{ position: 'relative' }}>
-            <div className="jali-corner jali-corner-tl" aria-hidden="true">
-              <CornerTL />
-            </div>
-            <div className="product-main-image">
-              <img src={currentImage} alt={dress.name} />
-            </div>
-            <div className="jali-corner jali-corner-br" aria-hidden="true">
-              <CornerBR />
-            </div>
+    <section className="product-page-new">
+      <div className="product-content">
+        <div className="product-image-section reveal">
+          <div
+            className="product-main-image-new product-zoom"
+            ref={imageRef}
+            onMouseMove={handleMouseMove}
+          >
+            <img src={currentImage} alt={dress.name} />
           </div>
-
           {images.length > 1 && (
-            <div className="product-thumbnails">
+            <div className="product-thumbnails-new">
               {images.map((img, i) => (
                 <button
                   key={i}
-                  className={`thumb-btn ${img === currentImage ? 'active' : ''}`}
+                  className={`thumb-new ${img === currentImage ? 'thumb-active' : ''}`}
                   onClick={() => setActiveImage(img)}
                   aria-label={`View ${dress.name} image ${i + 1}`}
                 >
@@ -104,33 +90,39 @@ export default function ProductPage() {
           )}
         </div>
 
-        <div className="product-info reveal">
-          <h1 className="product-name reveal reveal-delay-1">{dress.name}</h1>
+        <div className="product-info-new reveal">
+          <span className="product-meta">
+            {dress.category}{dress.season ? ` · ${dress.season}` : ''}
+          </span>
 
-          <div className="product-price-row reveal reveal-delay-2">
-            <span className="product-price-ornament" aria-hidden="true" />
-            <span className="product-price-tag">{formatPrice(dress.price)}</span>
-          </div>
+          <h1 className="product-name-new">{dress.name}</h1>
 
-          <p className="product-description">{dress.description}</p>
+          <div className="product-price-new">{formatPrice(dress.price)}</div>
+
+          <div className="product-divider-new" aria-hidden="true" />
+
+          <p className="product-description-new">{dress.description}</p>
 
           {dress.highlights.length > 0 && (
-            <div className="detail-highlights">
+            <div className="detail-highlights-new">
               {dress.highlights.slice(0, 4).map((h, i) => (
-                <div key={i} className="highlight-card" tabIndex={0}>
+                <div key={i} className="highlight-card-new">
                   <img src={h.image} alt="" aria-hidden="true" />
-                  <span className="highlight-label">{h.label}</span>
+                  <span className="highlight-label-new">{h.label}</span>
                 </div>
               ))}
             </div>
           )}
 
-          <InstagramCTA label="Ask About This Dress on Instagram" />
+          <InstagramCTA
+            label="Ask About This Dress"
+            className="cta-soft"
+          />
         </div>
       </div>
 
       {dresses.length > 1 && (
-        <section className="section related-section">
+        <section className="related-section-new">
           <h2 className="section-title">You May Also Like</h2>
           <div className="dress-grid related-grid">
             {dresses
