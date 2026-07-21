@@ -28,11 +28,6 @@ site_url: https://angan-by-bella.vercel.app
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-media_library:
-  name: uploads
-  config:
-    multiple: true
-
 collections:
   - name: "dresses"
     label: "Dresses"
