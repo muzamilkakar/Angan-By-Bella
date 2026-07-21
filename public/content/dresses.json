@@ -3,34 +3,34 @@
     {
       "mainImage": "/images/uploads/2.jpeg",
       "season": "Winter",
-      "price": 6500,
+      "price": 4499,
       "galleryImages": [],
       "name": "ZAYA",
       "featured": true,
-      "description": "ZAYA",
+      "description": "ZAYA  Details:\n• Summer-friendly maroon fabric\n• Peach machine embroidery\n• Short kurti paired with a farshi shalwar\n• Elegant collar neckline with delicate embroidery on the sleeves and shalwar\n• Subtle side panels for a graceful and modern look\n\n",
       "category": "Embroidered",
       "highlights": []
     },
     {
       "mainImage": "/images/uploads/3.jpeg",
       "season": "Summer",
-      "price": 4500,
+      "price": 4499,
       "galleryImages": [],
       "name": "PASHMINA",
       "featured": true,
-      "description": "PASHMINA",
+      "description": "Pashmina Details:\n\n• Cotton and linen blend fabric – lightweight, breathable, and perfect for summer\n• Elegant peach-toned design with delicate embroidery on the neckline, sleeves, and shalwar\n• Short kameez paired with a stylish Pashmina shalwar for a graceful look\n\n",
       "category": "Printed",
       "highlights": []
     },
     {
       "mainImage": "/images/uploads/5.jpeg",
       "season": "All Season",
-      "price": 7498,
+      "price": 5499,
       "galleryImages": [],
       "name": "Zareen",
       "featured": false,
-      "description": "Zareen black",
-      "category": "Silk",
+      "description": "Zareen Details:\n\n• Premium fabric with intricate machine embroidery on all four sides – neckline, sleeves, side slits, and hem\n• Elegant black design featuring detailed traditional embroidery in a warm mustard/gold tone, with a decorative pendant accent at the neckline\n• Long kameez paired with a plain black shalwar for a striking, timeless look\n• Signature \"4 Sides Embroidery\" detailing for a rich, statement finish\n",
+      "category": "Kurtis",
       "highlights": []
     }
   ]
