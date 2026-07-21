@@ -91,7 +91,7 @@ export default function Header() {
               <span />
               <span />
             </button>
-            <Link to="/" className="header-center" aria-label="Home">
+            <Link to="/" className="header-center logo-shimmer" aria-label="Home">
               <LogoMark />
             </Link>
           </div>
@@ -106,17 +106,17 @@ export default function Header() {
               </Link>
               <span className="nav-pill-sep" aria-hidden="true" />
               <Link
+                to="/category"
+                className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
+              >
+                Dresses
+              </Link>
+              <span className="nav-pill-sep" aria-hidden="true" />
+              <Link
                 to="/about"
                 className={`nav-pill-item ${location.pathname === '/about' ? 'active' : ''}`}
               >
                 About
-              </Link>
-              <span className="nav-pill-sep" aria-hidden="true" />
-              <Link
-                to="/category"
-                className={`nav-pill-item ${location.pathname.startsWith('/category') ? 'active' : ''}`}
-              >
-                Category
               </Link>
               <a
                 href={instagramCTAUrl()}

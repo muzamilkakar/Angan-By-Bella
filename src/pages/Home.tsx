@@ -3,9 +3,13 @@ import { useDresses } from '../hooks/useDresses'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
+import SkeletonCard from '../components/SkeletonCard'
 import InstagramCTA from '../components/InstagramCTA'
 import MoodSpotlight from '../components/MoodSpotlight'
 import InstagramGrid from '../components/InstagramGrid'
+import Testimonials from '../components/Testimonials'
+import SeasonalBanner from '../components/SeasonalBanner'
+import CourtyardStory from '../components/CourtyardStory'
 
 const categories = [
   { name: 'Embroidered', slug: 'embroidered' },
@@ -32,6 +36,7 @@ export default function Home() {
   return (
     <>
       <section className="editorial-hero reveal">
+        <div className="hero-dots" aria-hidden="true" />
         <div className="editorial-hero-text">
           <h1>
             Timeless <em>Elegance</em>
@@ -92,8 +97,8 @@ export default function Home() {
       <section className="section reveal reveal-delay-2">
         <h2 className="section-title">Featured Dresses</h2>
         {loading ? (
-          <div className="featured-placeholder">
-            <p className="placeholder-text">Loading featured dresses...</p>
+          <div className="skeleton-grid">
+            {[1, 2, 3].map(i => <SkeletonCard key={i} />)}
           </div>
         ) : display.length > 0 ? (
           <div className="dress-grid">
@@ -108,6 +113,12 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      <CourtyardStory />
+
+      <Testimonials />
+
+      <SeasonalBanner />
 
       <InstagramGrid />
 

@@ -12,6 +12,7 @@ export default function DressCard({ dress, index }: DressCardProps) {
     <Link to={`/product?slug=${getDressSlug(dress, index)}`} className="dress-card">
       <div className="dress-card-image">
         <img src={dress.mainImage} alt={dress.name} />
+        <span className="dress-card-badge">{dress.category}</span>
       </div>
       <div className="dress-card-body">
         <h3 className="dress-card-name">{dress.name}</h3>

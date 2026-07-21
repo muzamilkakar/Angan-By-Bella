@@ -3,10 +3,12 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Preloader from './components/Preloader'
+import BackToTop from './components/BackToTop'
 import Home from './pages/Home'
 import Category from './pages/Category'
 import Product from './pages/Product'
 import About from './pages/About'
+import NotFound from './components/NotFound'
 
 export default function App() {
   const location = useLocation()
@@ -47,8 +49,10 @@ export default function App() {
           <Route path="/category" element={<Category />} />
           <Route path="/product" element={<Product />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <BackToTop />
       <Footer />
     </>
   )
