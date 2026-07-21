@@ -8,7 +8,11 @@
       "name": "ZAYA",
       "featured": true,
       "description": "ZAYA  Details:\n• Summer-friendly maroon fabric\n• Peach machine embroidery\n• Short kurti paired with a farshi shalwar\n• Elegant collar neckline with delicate embroidery on the sleeves and shalwar\n• Subtle side panels for a graceful and modern look\n\n",
-      "category": ["Embroidered", "Kurtis", "Formals"],
+      "category": [
+        "Embroidered",
+        "Kurtis",
+        "Formals"
+      ],
       "highlights": []
     },
     {
@@ -19,7 +23,11 @@
       "name": "PASHMINA",
       "featured": true,
       "description": "Pashmina Details:\n\n• Cotton and linen blend fabric – lightweight, breathable, and perfect for summer\n• Elegant peach-toned design with delicate embroidery on the neckline, sleeves, and shalwar\n• Short kameez paired with a stylish Pashmina shalwar for a graceful look\n\n",
-      "category": ["Embroidered", "Printed", "Kurtis"],
+      "category": [
+        "Embroidered",
+        "Printed",
+        "Kurtis"
+      ],
       "highlights": []
     },
     {
@@ -30,7 +38,11 @@
       "name": "Zareen",
       "featured": false,
       "description": "Zareen Details:\n\n• Premium fabric with intricate machine embroidery on all four sides – neckline, sleeves, side slits, and hem\n• Elegant black design featuring detailed traditional embroidery in a warm mustard/gold tone, with a decorative pendant accent at the neckline\n• Long kameez paired with a plain black shalwar for a striking, timeless look\n• Signature \"4 Sides Embroidery\" detailing for a rich, statement finish\n",
-      "category": ["Kurtis", "Formals", "Embroidered"],
+      "category": [
+        "Kurtis",
+        "Formals",
+        "Embroidered"
+      ],
       "highlights": []
     },
     {
@@ -38,11 +50,27 @@
       "featured": true,
       "name": "LAYAL",
       "price": 4998,
-      "category": ["Formals", "Printed", "Bottoms"],
+      "category": [
+        "Formals",
+        "Printed",
+        "Bottoms"
+      ],
       "mainImage": "/images/uploads/layal.png",
-      "description": "LAYAL Details:\n\n• Leopard print fabric with a black and rust brown color combination\n• Long kaftan-style kameez with a graceful silhouette\n• Elegant stone work on the neckline and sleeves\n• A timeless design that blends comfort with sophistication\n\n",
-      "galleryImages": [],
-      "highlights": []
+      "description": "LAYAL Details:\n\n• Leopard print fabric with a black and rust brown color combination\n• Long kaftan-style kameez with a graceful silhouette\n• Elegant stone work on the neckline and sleeves\n• A timeless design that blends comfort with sophistication\n\n"
+    },
+    {
+      "season": "All Season",
+      "featured": false,
+      "name": "Noor",
+      "price": 4499,
+      "category": [
+        "Silk",
+        "Embroidered",
+        "Bottoms",
+        "Kurtis"
+      ],
+      "mainImage": "/images/uploads/noor.png",
+      "description": "Noor Details:\n\n• Semi-fabric long kameez\n• Printed silk shalwar\n• Elegant black machine embroidery on the front panels and sleeves\n• Minimal embroidery on the shalwar hem (paanchi)\n• Soft lavender & black color combination with a graceful long silhouette\n"
     }
   ]
 }
