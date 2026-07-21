@@ -133,19 +133,21 @@ export default function Header() {
       </header>
 
       <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
-        <Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/category" className="nav-link" onClick={() => setMenuOpen(false)}>Category</Link>
-        <Link to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to="/" className="mobile-nav-logo" onClick={() => setMenuOpen(false)} aria-label="Home">
+          <LogoMark />
+        </Link>
+        <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/category" className={`nav-link ${location.pathname.startsWith('/category') ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>Dresses</Link>
+        <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>About</Link>
         <a
           href={instagramCTAUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-link"
+          className="nav-link insta-link"
           onClick={() => setMenuOpen(false)}
-          style={{ display: 'flex', alignItems: 'center', gap: 10 }}
         >
-          <InstagramIcon size={20} />
-          Instagram
+          <InstagramIcon size={18} />
+          <span>Instagram</span>
         </a>
       </div>
     </>

@@ -155,7 +155,7 @@ h3 { font-size: 1.35rem; }
 }
 
 @supports not (backdrop-filter: blur(1px)) {
-  .site-header {
+.site-header {
     background: rgba(var(--angan-sand-rgb), 0.95);
   }
 }
@@ -333,10 +333,39 @@ h3 { font-size: 1.35rem; }
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
+  color: var(--angan-text-muted);
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: all var(--t);
+}
+
+.mobile-nav .nav-link.active {
   color: var(--angan-brown);
-  padding: 6px 18px;
-  border-radius: 2px;
-  transition: color var(--t);
+  font-weight: 500;
+  background: rgba(176, 141, 91, 0.08);
+}
+
+.mobile-nav .nav-link:hover {
+  color: var(--angan-brown);
+  background: rgba(176, 141, 91, 0.05);
+}
+
+.mobile-nav .insta-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.mobile-nav-logo {
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.mobile-nav-logo svg {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 /* ════════════════════════════════════════
@@ -474,12 +503,12 @@ h3 { font-size: 1.35rem; }
 .shop-strip-inner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  gap: 16px;
+  align-items: flex-start;
   background: rgba(176, 141, 91, 0.03);
   border: 1px solid rgba(176, 141, 91, 0.08);
   border-radius: 0;
-  padding: 24px 32px;
+  padding: 20px;
   transition: all var(--t);
 }
 
@@ -490,9 +519,18 @@ h3 { font-size: 1.35rem; }
 
 .category-strip {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 6px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+.category-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .category-chip {
@@ -1142,12 +1180,15 @@ footer a:hover {
 
   .shop-strip-inner {
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
   }
 
   .category-strip {
     flex: 1;
+    flex-wrap: wrap;
+    overflow: visible;
     justify-content: flex-start;
   }
 
