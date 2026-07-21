@@ -9,3 +9,7 @@ export function getDressSlug(dress: { name: string }, index: number): string {
 export function formatPrice(price: number): string {
   return `PKR ${price.toLocaleString('en-PK')}`;
 }
+
+export function normalizeCategoryList(category: string | string[]): string[] {
+  return Array.isArray(category) ? category : [category];
+}

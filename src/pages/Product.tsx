@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { getDressSlug, formatPrice } from '../utils'
+import { getDressSlug, formatPrice, normalizeCategoryList } from '../utils'
 import DressCard from '../components/DressCard'
 import InstagramCTA from '../components/InstagramCTA'
 
@@ -92,7 +92,7 @@ export default function ProductPage() {
 
         <div className="product-info-new reveal">
           <span className="product-meta">
-            {dress.category.join(' / ')}{dress.season ? ` · ${dress.season}` : ''}
+            {normalizeCategoryList(dress.category).join(' / ')}{dress.season ? ` · ${dress.season}` : ''}
           </span>
 
           <h1 className="product-name-new">{dress.name}</h1>

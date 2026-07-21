@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from 'react-router-dom'
 import { useDresses } from '../hooks/useDresses'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { getDressSlug } from '../utils'
+import { getDressSlug, normalizeCategoryList } from '../utils'
 import DressCard from '../components/DressCard'
 import type { Category, Season } from '../types'
 
@@ -17,7 +17,7 @@ export default function CategoryPage() {
   const activeSeason = searchParams.get('season')
 
   const filtered = dresses.filter(d => {
-    if (activeType && !d.category.some(c => c.toLowerCase() === activeType)) return false
+    if (activeType && !normalizeCategoryList(d.category).some(c => c.toLowerCase() === activeType)) return false
     if (activeSeason && d.season !== activeSeason) return false
     return true
   })
