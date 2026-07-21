@@ -1,37 +1,62 @@
 {
   "dresses": [
     {
-      "mainImage": "/images/uploads/chatgpt-image-jul-21-2026-10_40_24-am.png",
+      "mainImage": "/images/uploads/zaya.png",
       "season": "Winter",
       "price": 4499,
       "galleryImages": [],
       "name": "ZAYA",
       "featured": true,
       "description": "ZAYA  Details:\n• Summer-friendly maroon fabric\n• Peach machine embroidery\n• Short kurti paired with a farshi shalwar\n• Elegant collar neckline with delicate embroidery on the sleeves and shalwar\n• Subtle side panels for a graceful and modern look\n\n",
-      "category": "Embroidered",
+      "category": [
+        "Embroidered",
+        "Kurtis",
+        "Formals"
+      ],
       "highlights": []
     },
     {
-      "mainImage": "/images/uploads/3.jpeg",
+      "mainImage": "/images/uploads/pashmina.png",
       "season": "Summer",
       "price": 4499,
       "galleryImages": [],
       "name": "PASHMINA",
       "featured": true,
       "description": "Pashmina Details:\n\n• Cotton and linen blend fabric – lightweight, breathable, and perfect for summer\n• Elegant peach-toned design with delicate embroidery on the neckline, sleeves, and shalwar\n• Short kameez paired with a stylish Pashmina shalwar for a graceful look\n\n",
-      "category": "Printed",
+      "category": [
+        "Embroidered",
+        "Printed",
+        "Kurtis"
+      ],
       "highlights": []
     },
     {
-      "mainImage": "/images/uploads/5.jpeg",
+      "mainImage": "/images/uploads/zareen.png",
       "season": "All Season",
       "price": 5499,
       "galleryImages": [],
       "name": "Zareen",
       "featured": false,
       "description": "Zareen Details:\n\n• Premium fabric with intricate machine embroidery on all four sides – neckline, sleeves, side slits, and hem\n• Elegant black design featuring detailed traditional embroidery in a warm mustard/gold tone, with a decorative pendant accent at the neckline\n• Long kameez paired with a plain black shalwar for a striking, timeless look\n• Signature \"4 Sides Embroidery\" detailing for a rich, statement finish\n",
-      "category": "Kurtis",
+      "category": [
+        "Kurtis",
+        "Formals",
+        "Embroidered"
+      ],
       "highlights": []
+    },
+    {
+      "season": "All Season",
+      "featured": true,
+      "name": "LAYAL",
+      "price": 4998,
+      "category": [
+        "Formals",
+        "Printed",
+        "Bottoms"
+      ],
+      "mainImage": "/images/uploads/layal.png",
+      "description": "LAYAL Details:\n\n• Leopard print fabric with a black and rust brown color combination\n• Long kaftan-style kameez with a graceful silhouette\n• Elegant stone work on the neckline and sleeves\n• A timeless design that blends comfort with sophistication\n\n"
     }
   ]
 }
