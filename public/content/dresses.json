@@ -2,7 +2,7 @@
   "dresses": [
     {
       "mainImage": "/images/uploads/zaya.png",
-      "season": "Winter",
+      "season": "All Season",
       "price": 4499,
       "galleryImages": [],
       "name": "ZAYA",
@@ -17,7 +17,7 @@
     },
     {
       "mainImage": "/images/uploads/pashmina.png",
-      "season": "Summer",
+      "season": "All Season",
       "price": 4499,
       "galleryImages": [],
       "name": "PASHMINA",
