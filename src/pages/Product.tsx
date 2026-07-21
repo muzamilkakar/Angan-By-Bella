@@ -92,7 +92,7 @@ export default function ProductPage() {
 
         <div className="product-info-new reveal">
           <span className="product-meta">
-            {dress.category}{dress.season ? ` · ${dress.season}` : ''}
+            {dress.category.join(' / ')}{dress.season ? ` · ${dress.season}` : ''}
           </span>
 
           <h1 className="product-name-new">{dress.name}</h1>
@@ -101,7 +101,7 @@ export default function ProductPage() {
 
           <div className="product-divider-new" aria-hidden="true" />
 
-          <p className="product-description-new">{dress.description}</p>
+          <p className="product-description-new" style={{ whiteSpace: 'pre-line' }}>{dress.description}</p>
 
           {dress.highlights.length > 0 && (
             <div className="detail-highlights-new">

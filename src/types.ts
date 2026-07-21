@@ -9,7 +9,7 @@ export interface DetailHighlight {
 export interface Dress {
   name: string;
   price: number;
-  category: Category;
+  category: Category[];
   season: Season;
   mainImage: string;
   galleryImages: string[];

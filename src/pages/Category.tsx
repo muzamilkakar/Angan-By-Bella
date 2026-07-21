@@ -17,7 +17,7 @@ export default function CategoryPage() {
   const activeSeason = searchParams.get('season')
 
   const filtered = dresses.filter(d => {
-    if (activeType && d.category.toLowerCase() !== activeType.toLowerCase()) return false
+    if (activeType && !d.category.some(c => c.toLowerCase() === activeType)) return false
     if (activeSeason && d.season !== activeSeason) return false
     return true
   })

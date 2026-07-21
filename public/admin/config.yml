@@ -44,7 +44,12 @@ collections:
             fields:
               - {label: "Dress Name", name: "name", widget: "string"}
               - {label: "Price (PKR)", name: "price", widget: "number", value_type: "int"}
-              - {label: "Category", name: "category", widget: "select", options: ["Embroidered", "Printed", "Solids", "Silk", "Formals", "Kurtis", "Bottoms", "Other"]}
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                multiple: true
+                min: 1
+                options: ["Embroidered", "Printed", "Solids", "Silk", "Formals", "Kurtis", "Bottoms", "Other"]
               - {label: "Season", name: "season", widget: "select", options: ["Winter", "Summer", "All Season"], default: "All Season"}
               - {label: "Main Image", name: "mainImage", widget: "image"}
               - label: "Gallery Images"
