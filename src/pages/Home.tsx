@@ -4,8 +4,9 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 import { getDressSlug } from '../utils'
 import DressCard from '../components/DressCard'
 import SkeletonCard from '../components/SkeletonCard'
+import InstagramCTA from '../components/InstagramCTA'
 import MoodSpotlight from '../components/MoodSpotlight'
-import InstagramGrid from '../components/InstagramGrid'
+
 import Testimonials from '../components/Testimonials'
 import SeasonalBanner from '../components/SeasonalBanner'
 import CourtyardStory from '../components/CourtyardStory'
@@ -119,10 +120,14 @@ export default function Home() {
 
       <SeasonalBanner />
 
-      <InstagramGrid />
-
       <MoodSpotlight />
 
+      <section className="instagram-cta reveal reveal-delay-3">
+        <div className="cta-content">
+          <h2>Have a question about any dress?</h2>
+          <InstagramCTA label="Ask us on Instagram" />
+        </div>
+      </section>
     </>
   )
 }
