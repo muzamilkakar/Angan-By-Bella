@@ -20,7 +20,6 @@ export default function Logo({ className = '' }: LogoProps) {
         fontSize="24"
         fill="#4A2C1A"
         fontWeight="600"
-        letterSpacing="1.5"
       >
         انگن
       </text>
